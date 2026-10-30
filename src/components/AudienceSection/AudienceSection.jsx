@@ -47,33 +47,44 @@ export default function AudienceSection() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
     const context = gsap.context(() => {
-      gsap.fromTo('.audience-card',
-        { autoAlpha: 0, y: 48 },
+      gsap.fromTo('.audience-heading',
+        { autoAlpha: 0, y: 24 },
         {
           autoAlpha: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.12,
+          duration: 0.7,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.audience-grid',
-            start: 'top 82%',
-            once: true,
-          },
+          scrollTrigger: { trigger: '.audience-heading', start: 'top 88%', once: true },
         },
       )
 
+      gsap.utils.toArray('.audience-card').forEach((card, index) => {
+        gsap.fromTo(card,
+          { autoAlpha: 0, y: 52, scale: 0.97 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.85,
+            delay: index * 0.1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: card, start: 'top 86%', once: true },
+          },
+        )
+      })
+
       gsap.utils.toArray('.audience-image img').forEach((image) => {
         gsap.fromTo(image,
-          { scale: 1.12 },
+          { scale: 1.1, yPercent: -4 },
           {
-            scale: 1,
-            duration: 1.2,
-            ease: 'power2.out',
+            scale: 1.04,
+            yPercent: 4,
+            ease: 'none',
             scrollTrigger: {
-              trigger: image,
-              start: 'top 88%',
-              once: true,
+              trigger: image.closest('.audience-card'),
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.8,
             },
           },
         )
@@ -86,7 +97,7 @@ export default function AudienceSection() {
   return (
     <section className="audience-section relative overflow-hidden px-[var(--site-page-gutter)] py-24 text-[#f7f7f2] max-[900px]:px-5 max-[600px]:py-16" ref={section} aria-labelledby="audience-title">
       <div className="relative z-[1] mx-auto w-full max-w-[var(--site-container-width)]">
-        <h2 className="mb-10 text-center text-[clamp(18px,1.35vw,25px)] font-medium uppercase tracking-[.14em] max-[600px]:mb-7" id="audience-title">
+        <h2 className="audience-heading mb-10 text-center text-[clamp(18px,1.35vw,25px)] font-medium uppercase tracking-[.14em] max-[600px]:mb-7" id="audience-title">
           Who this course is for
         </h2>
         <div className="audience-grid grid grid-cols-4 gap-3.5 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 max-[600px]:gap-4">

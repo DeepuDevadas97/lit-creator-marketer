@@ -17,11 +17,11 @@
     gap: 18px;
     transition:
         border-color 0.35s,
-        transform 0.35s;
+        box-shadow 0.35s;
 }
 .audience-card:hover {
     border-color: rgba(54, 233, 156, 0.45);
-    transform: translateY(-5px);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32), 0 0 24px rgba(54, 233, 156, 0.08);
 }
 .audience-image {
     position: relative;
@@ -32,8 +32,11 @@
     background: #202020;
 }
 .audience-image img {
+    position: absolute;
+    top: -8%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 116%;
     display: block;
     object-fit: cover;
     will-change: transform;
@@ -104,6 +107,11 @@
     color: rgba(255, 255, 255, 0.7);
     font-size: clamp(32px, 3vw, 48px);
     line-height: 0.9;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.audience-card:hover .audience-arrow {
+    transform: translate(4px, -4px);
+    color: #36e99c;
 }
 .audience-copy {
     display: flex;
