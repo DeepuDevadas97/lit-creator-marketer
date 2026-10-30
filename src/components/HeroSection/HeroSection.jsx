@@ -144,6 +144,11 @@ export default function HeroSection() {
                     },
                     1.35,
                 )
+                .to(
+                    loader.current,
+                    { opacity: 0.8, duration: 0.8, ease: "none" },
+                    1.35,
+                )
                 .add(reveal, 1.4);
             reveal.paused(false);
 
