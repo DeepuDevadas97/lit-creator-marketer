@@ -49,9 +49,9 @@ export default function HeroSection() {
         scrollTrigger: {
           trigger: loader.current,
           start: 'top top',
-          end: () => `+=${loader.current.offsetHeight * 2}`,
+          end: () => `+=${loader.current.offsetHeight * 4}`,
           pin: true,
-          scrub: 1.5,
+          scrub: 1.8,
           invalidateOnRefresh: true,
         },
       })
@@ -68,7 +68,7 @@ export default function HeroSection() {
         .to(loader.current, { backgroundColor: '#f7f7f2', duration: .6, ease: 'power2.inOut' }, 1)
         .to(loader.current.querySelector('.scroll-loader-content'), { autoAlpha: 0, duration: .4 }, 1)
         .to('.loader-side-note, .loader-bottom-note', { autoAlpha: 0, duration: .35 }, 1)
-        .to(loader.current, { clipPath: 'circle(0% at 50% 50%)', duration: .65, ease: 'power3.inOut' }, 1.35)
+        .to(loader.current, { clipPath: 'circle(0% at 50% 50%)', duration: .8, ease: 'none' }, 1.35)
         .add(reveal, 1.4)
       reveal.paused(false)
 

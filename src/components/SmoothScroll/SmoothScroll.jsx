@@ -9,7 +9,13 @@ export default function SmoothScroll() {
   useLayoutEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
-    const lenis = new Lenis({ autoRaf: false, smoothWheel: true, lerp: 0.08, anchors: true })
+    const lenis = new Lenis({
+      autoRaf: false,
+      smoothWheel: true,
+      lerp: 0.05,
+      wheelMultiplier: 0.9,
+      anchors: true,
+    })
     const updateScrollTrigger = () => ScrollTrigger.update()
     const updateLenis = (time) => lenis.raf(time * 1000)
 
