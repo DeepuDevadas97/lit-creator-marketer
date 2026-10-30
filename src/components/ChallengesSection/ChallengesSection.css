@@ -408,4 +408,77 @@
         transition: none;
     }
 }
-.brand-challenge{display:block}.brand-card-motion{display:grid;height:100%;min-height:350px;grid-template-columns:minmax(0,1.25fr) minmax(120px,.85fr);will-change:transform,opacity}.brand-challenge-photo{height:100%}@media(max-width:700px){.brand-card-motion{min-height:300px;grid-template-columns:minmax(0,1.25fr) minmax(105px,.85fr)}}
+.brand-challenge {
+    display: block;
+}
+.brand-card-motion {
+    display: grid;
+    height: 100%;
+    min-height: 350px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(120px, 0.85fr);
+    will-change: transform, opacity;
+}
+.brand-challenge-photo {
+    height: 100%;
+}
+@media (max-width: 700px) {
+    .brand-card-motion {
+        min-height: 300px;
+        grid-template-columns: minmax(0, 1.25fr) minmax(105px, 0.85fr);
+    }
+}
+.epic-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 28px;
+    background: #0d0b10;
+}
+.epic-art {
+    height: clamp(360px, 34vw, 520px);
+    min-height: 0;
+    flex: none;
+}
+.epic-art:after {
+    inset: 28% 0 0;
+    background: linear-gradient(
+        180deg,
+        transparent 8%,
+        rgba(34, 9, 40, 0.22) 46%,
+        #27102f 100%
+    );
+}
+.epic-overview {
+    flex: 1;
+    align-self: stretch;
+    margin: 0;
+    padding: 26px 28px 30px;
+    border: 0;
+    border-top: 1px solid rgba(229, 68, 229, 0.28);
+    border-radius: 0;
+    background: linear-gradient(180deg, #27102f 0%, #180d20 100%);
+    box-shadow: none;
+}
+.epic-overview .skill-chip {
+    background: rgba(8, 8, 8, 0.3);
+}
+@media (max-width: 1000px) {
+    .epic-card {
+        height: auto;
+    }
+    .epic-art {
+        height: clamp(340px, 58vw, 500px);
+    }
+    .epic-overview {
+        margin: 0;
+        padding: 24px 24px 28px;
+    }
+}
+@media (max-width: 700px) {
+    .epic-art {
+        height: 360px;
+    }
+    .epic-overview {
+        padding: 21px 19px 24px;
+    }
+}
