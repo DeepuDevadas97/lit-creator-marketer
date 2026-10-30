@@ -51,7 +51,7 @@ export default function HeroSection() {
           start: 'top top',
           end: () => `+=${loader.current.offsetHeight * 2}`,
           pin: true,
-          scrub: 1.1,
+          scrub: 1.5,
           invalidateOnRefresh: true,
         },
       })
@@ -65,10 +65,10 @@ export default function HeroSection() {
           loader.current.setAttribute('aria-valuenow', percentage)
         },
       }, 0)
-        .to(loader.current, { backgroundColor: '#f7f7f2', duration: .45, ease: 'power1.inOut' }, 1)
-        .to(loader.current.querySelector('.scroll-loader-content'), { autoAlpha: 0, duration: .3 }, 1)
-        .to('.loader-side-note, .loader-bottom-note', { autoAlpha: 0, duration: .25 }, 1)
-        .to(loader.current, { clipPath: 'circle(0% at 50% 50%)', duration: .6, ease: 'power2.inOut' }, 1.4)
+        .to(loader.current, { backgroundColor: '#f7f7f2', duration: .6, ease: 'power2.inOut' }, 1)
+        .to(loader.current.querySelector('.scroll-loader-content'), { autoAlpha: 0, duration: .4 }, 1)
+        .to('.loader-side-note, .loader-bottom-note', { autoAlpha: 0, duration: .35 }, 1)
+        .to(loader.current, { clipPath: 'circle(0% at 50% 50%)', duration: .65, ease: 'power3.inOut' }, 1.35)
         .add(reveal, 1.4)
       reveal.paused(false)
 
