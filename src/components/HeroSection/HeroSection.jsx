@@ -27,15 +27,13 @@ export default function HeroSection() {
       }
 
       gsap.set('.site-header', { autoAlpha: 0, y: -24 })
-      gsap.set('.hero-copy > *, .applications-pill, .play-button, .visual-caption > *, .visual-index', { autoAlpha: 0, y: 24 })
+      gsap.set('.hero-copy > :not(h1), .applications-pill, .play-button, .visual-caption > *, .visual-index', { autoAlpha: 0, y: 24 })
       gsap.set('.hero-visual', { autoAlpha: 0, y: 24, scale: .96, clipPath: 'inset(12% 0 12% 0 round 22px)' })
       gsap.set('.visual-photo', { scale: 1.08 })
 
       const reveal = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } })
         .to('.site-header', { autoAlpha: 1, y: 0, duration: .7 }, 0)
         .to('.eyebrow', { autoAlpha: 1, y: 0, duration: .55 }, .08)
-        .to('.hero-copy h1', { autoAlpha: 1, y: 0, duration: .5 }, .1)
-        .to('.title-line', { yPercent: 0, rotate: 0, duration: .9, stagger: .13 }, .13)
         .to('.hero-description, .hero-tags, .hero-cta, .diploma-note, .partner-strip', { autoAlpha: 1, y: 0, duration: .65, stagger: .09 }, .28)
         .to('.hero-visual', { autoAlpha: 1, y: 0, scale: 1, clipPath: 'inset(0% 0 0% 0 round 22px)', duration: 1.05 }, .02)
         .to('.visual-photo', { scale: 1, duration: 1.4 }, .02)
