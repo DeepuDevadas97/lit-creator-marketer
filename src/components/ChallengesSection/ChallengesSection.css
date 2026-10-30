@@ -408,3 +408,4 @@
         transition: none;
     }
 }
+.brand-challenge{display:block}.brand-card-motion{display:grid;height:100%;min-height:350px;grid-template-columns:minmax(0,1.25fr) minmax(120px,.85fr);will-change:transform,opacity}.brand-challenge-photo{height:100%}@media(max-width:700px){.brand-card-motion{min-height:300px;grid-template-columns:minmax(0,1.25fr) minmax(105px,.85fr)}}

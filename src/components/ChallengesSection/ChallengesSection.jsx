@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './ChallengesSection.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const tracks = [
   {
@@ -116,6 +119,80 @@ export default function ChallengesSection() {
 
   useLayoutEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const context = gsap.context(() => {
+      gsap.fromTo('.challenges-heading',
+        { autoAlpha: 0, y: 28 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: '.challenges-heading', start: 'top 88%', once: true },
+        },
+      )
+      gsap.fromTo('.challenge-tab',
+        { autoAlpha: 0, y: 18 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.07,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: '.challenge-tabs', start: 'top 90%', once: true },
+        },
+      )
+      gsap.fromTo('.epic-card',
+        { autoAlpha: 0, clipPath: 'inset(12% 0 0 round 28px)' },
+        {
+          autoAlpha: 1,
+          clipPath: 'inset(0% 0 0 round 28px)',
+          duration: 0.95,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: '.challenge-layout', start: 'top 84%', once: true },
+        },
+      )
+
+      gsap.utils.toArray('.brand-challenge').forEach((card, index) => {
+        const mobile = window.matchMedia('(max-width: 700px)').matches
+        gsap.fromTo(card.querySelector('.brand-card-motion'),
+          { autoAlpha: 0, x: mobile ? 0 : (index % 2 === 0 ? -28 : 28), y: 24, scale: 0.985 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 0.75,
+            delay: index * 0.08,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: card, start: 'top 88%', once: true },
+          },
+        )
+      })
+
+      gsap.utils.toArray('.epic-art img, .brand-challenge-photo img').forEach((image) => {
+        gsap.fromTo(image,
+          { scale: 1.08, yPercent: -3 },
+          {
+            scale: 1.02,
+            yPercent: 3,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: image.closest('.epic-art, .brand-challenge-photo'),
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.8,
+            },
+          },
+        )
+      })
+    }, section)
+
+    return () => context.revert()
+  }, [])
+
+  useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
     const context = gsap.context(() => {
       gsap.fromTo('.epic-dynamic-content',
         { autoAlpha: 0, y: 16 },
@@ -185,12 +262,14 @@ export default function ChallengesSection() {
             <div className="brand-challenge-grid grid grid-cols-2 gap-3 max-[700px]:grid-cols-1">
               {brands.map((brand, index) => (
                 <article className={`brand-challenge brand-challenge-${index + 1} brand-${brand.color}`} key={brand.name}>
-                  <div className="brand-challenge-copy">
-                    <div className="brand-name-row"><span className="brand-mark-badge">{brand.mark}</span><h3>{brand.name}</h3></div>
-                    <p className="brand-prompt">{prompts ? prompts[index] : brand.serial}</p>
-                    <div className="brand-guide"><span>Guided by</span><strong>{brand.guide}</strong><small>{brand.role}</small></div>
+                  <div className="brand-card-motion">
+                    <div className="brand-challenge-copy">
+                      <div className="brand-name-row"><span className="brand-mark-badge">{brand.mark}</span><h3>{brand.name}</h3></div>
+                      <p className="brand-prompt">{prompts ? prompts[index] : brand.serial}</p>
+                      <div className="brand-guide"><span>Guided by</span><strong>{brand.guide}</strong><small>{brand.role}</small></div>
+                    </div>
+                    <div className="brand-challenge-photo"><img src={brand.image} alt={`${brand.guide}, challenge mentor`} loading="lazy" /></div>
                   </div>
-                  <div className="brand-challenge-photo"><img src={brand.image} alt={`${brand.guide}, challenge mentor`} loading="lazy" /></div>
                 </article>
               ))}
             </div>
