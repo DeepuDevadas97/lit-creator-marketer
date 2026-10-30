@@ -1,0 +1,195 @@
+.audience-section {
+    background-color: #0b0c0c;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+.audience-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 28px;
+    background: #0a0a0a;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition:
+        border-color 0.35s,
+        transform 0.35s;
+}
+.audience-card:hover {
+    border-color: rgba(54, 233, 156, 0.45);
+    transform: translateY(-5px);
+}
+.audience-image {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    aspect-ratio: 1.12;
+    border-radius: 22px;
+    background: #202020;
+}
+.audience-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    will-change: transform;
+}
+.audience-image:after {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(9, 10, 10, 0.08) 48%,
+        rgba(9, 10, 10, 0.88) 100%
+    );
+    content: "";
+}
+.audience-image-amber:after {
+    background: linear-gradient(
+        180deg,
+        transparent 26%,
+        rgba(100, 45, 0, 0.12) 52%,
+        rgba(37, 16, 0, 0.94) 100%
+    );
+}
+.audience-image-violet:after {
+    background: linear-gradient(
+        180deg,
+        transparent 28%,
+        rgba(78, 0, 54, 0.16) 54%,
+        rgba(12, 8, 16, 0.96) 100%
+    );
+}
+.audience-image-pink:after {
+    background: linear-gradient(
+        180deg,
+        transparent 25%,
+        rgba(88, 0, 64, 0.15) 50%,
+        rgba(16, 7, 19, 0.96) 100%
+    );
+}
+.audience-image-teal:after {
+    background: linear-gradient(
+        180deg,
+        transparent 28%,
+        rgba(0, 70, 65, 0.16) 55%,
+        rgba(0, 22, 20, 0.97) 100%
+    );
+}
+.audience-image-caption {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+.audience-image-caption h3 {
+    max-width: 290px;
+    margin: 0;
+    font-size: clamp(24px, 2.2vw, 40px);
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -0.055em;
+}
+.audience-arrow {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(32px, 3vw, 48px);
+    line-height: 0.9;
+}
+.audience-copy {
+    display: flex;
+    min-height: 145px;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 18px 14px;
+}
+.audience-copy p {
+    margin: 0;
+    font-size: clamp(15px, 1.15vw, 20px);
+    line-height: 1.55;
+    letter-spacing: -0.035em;
+}
+.audience-intro {
+    font-weight: 500;
+}
+.audience-description {
+    color: #e0e1df;
+}
+.audience-card-2 .audience-copy,
+.audience-card-4 .audience-copy {
+    min-height: 128px;
+    padding: 32px 18px 4px;
+}
+.audience-card-2 .audience-image,
+.audience-card-4 .audience-image {
+    margin-top: auto;
+}
+.audience-card-1 .audience-copy,
+.audience-card-3 .audience-copy {
+    min-height: 140px;
+}
+@media (max-width: 1000px) {
+    .audience-card {
+        gap: 12px;
+    }
+    .audience-image {
+        aspect-ratio: 1.2;
+    }
+    .audience-copy {
+        min-height: 125px;
+    }
+    .audience-card-2 .audience-copy,
+    .audience-card-4 .audience-copy {
+        min-height: 125px;
+        padding: 24px 14px 4px;
+    }
+}
+@media (max-width: 600px) {
+    .audience-grid {
+        max-width: 440px;
+        margin-inline: auto;
+    }
+    .audience-card {
+        gap: 4px;
+        border-radius: 22px;
+        padding: 7px;
+    }
+    .audience-image {
+        aspect-ratio: 1.35;
+        border-radius: 16px;
+    }
+    .audience-image-caption {
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+        gap: 10px;
+    }
+    .audience-image-caption h3 {
+        font-size: clamp(28px, 8vw, 36px);
+    }
+    .audience-arrow {
+        font-size: 34px;
+    }
+    .audience-copy,
+    .audience-card-2 .audience-copy,
+    .audience-card-4 .audience-copy {
+        min-height: 0;
+        gap: 12px;
+        padding: 18px 12px;
+    }
+    .audience-card-1 .audience-copy,
+    .audience-card-3 .audience-copy {
+        min-height: 0;
+    }
+}
