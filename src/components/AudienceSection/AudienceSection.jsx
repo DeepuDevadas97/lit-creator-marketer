@@ -84,8 +84,8 @@ export default function AudienceSection() {
   }, [])
 
   return (
-    <section className="audience-section relative overflow-hidden px-6 py-24 text-[#f7f7f2] max-[900px]:px-5 max-[600px]:py-16" ref={section} aria-labelledby="audience-title">
-      <div className="relative z-[1] mx-auto max-w-[1800px]">
+    <section className="audience-section relative overflow-hidden px-[var(--site-page-gutter)] py-24 text-[#f7f7f2] max-[900px]:px-5 max-[600px]:py-16" ref={section} aria-labelledby="audience-title">
+      <div className="relative z-[1] mx-auto w-full max-w-[var(--site-container-width)]">
         <h2 className="mb-10 text-center text-[clamp(18px,1.35vw,25px)] font-medium uppercase tracking-[.14em] max-[600px]:mb-7" id="audience-title">
           Who this course is for
         </h2>

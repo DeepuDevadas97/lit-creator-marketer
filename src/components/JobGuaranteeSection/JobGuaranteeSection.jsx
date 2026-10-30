@@ -60,6 +60,59 @@ export default function JobGuaranteeSection() {
           scrollTrigger: { trigger: '.guarantee-grid', start: 'top 80%', once: true },
         },
       )
+
+      gsap.fromTo('.engine-list-item',
+        { autoAlpha: 0, x: -20 },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: '.engine-card ul', start: 'top 82%', once: true },
+        },
+      )
+
+      gsap.fromTo('.engine-image img',
+        { scale: 1.12, yPercent: 5 },
+        {
+          scale: 1,
+          yPercent: -4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.engine-image',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        },
+      )
+
+      gsap.fromTo('.guarantee-support-image img',
+        { scale: 1.12, yPercent: -5 },
+        {
+          scale: 1,
+          yPercent: 5,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.guarantee-support-image',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        },
+      )
+
+      gsap.fromTo('.outcome-switch',
+        { autoAlpha: 0, y: 24 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: '.outcome-switch', start: 'top 88%', once: true },
+        },
+      )
     }, section)
 
     return () => context.revert()
@@ -79,8 +132,8 @@ export default function JobGuaranteeSection() {
   }, [activeOutcome])
 
   return (
-    <section className="guarantee-section relative overflow-hidden px-6 py-20 text-[#f7f7f2] max-[900px]:px-5 max-[600px]:py-14" ref={section} aria-labelledby="guarantee-title">
-      <div className="guarantee-grid mx-auto grid max-w-[1800px] grid-cols-[.9fr_1.2fr_1fr] items-stretch gap-6 max-[1050px]:grid-cols-2 max-[1050px]:gap-4 max-[680px]:grid-cols-1">
+    <section className="guarantee-section relative px-[var(--site-page-gutter)] py-20 text-[#f7f7f2] max-[900px]:px-5 max-[600px]:py-14" ref={section} aria-labelledby="guarantee-title">
+      <div className="guarantee-grid mx-auto grid w-full max-w-[var(--site-container-width)] grid-cols-[.9fr_1.2fr_1fr] items-stretch gap-6 max-[1050px]:grid-cols-2 max-[1050px]:gap-4 max-[680px]:grid-cols-1">
         <div className="guarantee-column flex min-h-[680px] flex-col justify-between py-5 max-[1050px]:min-h-0 max-[680px]:gap-10">
           <div>
             <h2 className="m-0 text-[clamp(52px,5vw,94px)] font-semibold leading-[.9] tracking-[-.075em]" id="guarantee-title">

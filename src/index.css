@@ -1,4 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 @import 'lenis/dist/lenis.css';
 @import "tailwindcss";
-:root{font-family:'DM Sans',sans-serif;color:#f7f7f2;background:#0b0c0c;font-synthesis:none;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-weight:400}*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100vh}a{color:inherit}
+:root{--site-container-width:1440px;--site-page-gutter:clamp(20px,4vw,60px);font-family:'DM Sans',sans-serif;color:#f7f7f2;background:#0b0c0c;font-synthesis:none;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-weight:400}*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100vh}a{color:inherit}

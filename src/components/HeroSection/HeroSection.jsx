@@ -219,10 +219,10 @@ export default function HeroSection() {
             >
                 <Header />
                 <section
-                    className="hero-shell relative min-h-[calc(100svh-84px)] overflow-hidden bg-[#0b0c0c] px-[clamp(22px,5vw,76px)] pb-[30px] pt-[clamp(58px,7vw,108px)] max-[900px]:min-h-[calc(100svh-72px)] max-[900px]:pt-[55px] max-[540px]:px-5 max-[540px]:pt-[42px]"
+                    className="hero-shell relative min-h-[calc(100svh-84px)] overflow-hidden bg-[#0b0c0c] px-[var(--site-page-gutter)] pb-[30px] pt-[clamp(58px,7vw,108px)] max-[900px]:min-h-[calc(100svh-72px)] max-[900px]:pt-[55px] max-[900px]:px-5 max-[540px]:pt-[42px]"
                     id="top"
                 >
-                    <div className="hero-wrap relative mx-auto grid w-full max-w-[1440px] grid-cols-[minmax(0,.94fr)_minmax(0,1.06fr)] items-center gap-[clamp(38px,6vw,100px)] max-[900px]:grid-cols-1 max-[900px]:gap-10">
+                    <div className="hero-wrap relative mx-auto grid w-full max-w-[var(--site-container-width)] grid-cols-[minmax(0,.94fr)_minmax(0,1.06fr)] items-center gap-[clamp(38px,6vw,100px)] max-[900px]:grid-cols-1 max-[900px]:gap-10">
                         <div className="hero-copy relative z-[1] min-w-0 text-[#f6f6f2]">
                             <p className="eyebrow">
                                 <span className="eyebrow-dot" /> The next
@@ -325,7 +325,7 @@ export default function HeroSection() {
                             <span className="visual-orbit orbit-two" />
                         </div>
                     </div>
-                    <div className="hero-footer mx-auto mt-[clamp(35px,5vw,65px)] flex max-w-[1440px] flex-wrap justify-between gap-x-5 gap-y-2 border-t border-white/15 pt-[15px] text-[9px] uppercase tracking-[.17em] text-[#8c8e89] max-[900px]:mt-8 max-[540px]:text-[8px] max-[540px]:tracking-[.1em]">
+                    <div className="hero-footer mx-auto mt-[clamp(35px,5vw,65px)] flex max-w-[var(--site-container-width)] flex-wrap justify-between gap-x-5 gap-y-2 border-t border-white/15 pt-[15px] text-[9px] uppercase tracking-[.17em] text-[#8c8e89] max-[900px]:mt-8 max-[540px]:text-[8px] max-[540px]:tracking-[.1em]">
                         <span>Made for the makers</span>
                         <span>
                             Scroll to explore <i>↓</i>
