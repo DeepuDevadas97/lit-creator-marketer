@@ -56,7 +56,7 @@
 }
 .hero-copy h1 {
     font-size: clamp(50px, 6vw, 88px);
-    line-height: 1.04;
+    line-height: 1.07;
     letter-spacing: -0.075em;
     font-weight: 600;
     margin: 0;
@@ -149,9 +149,8 @@
 .partner-logos {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    max-width: 570px;
+    width: max-content;
+    animation: brand-marquee 28s linear infinite;
 }
 .partner-logo {
     color: #e6e7e2;
@@ -373,11 +372,6 @@
     }
     .diploma-note {
         font-size: 12px;
-    }
-    .partner-logos {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 14px 20px;
     }
     .partner-logo {
         font-size: 13px;
@@ -665,6 +659,15 @@
 @media (prefers-reduced-motion: reduce) {
     .scroll-mouse:after {
         animation: none;
+    }
+    .partner-logos {
+        animation: none;
+        transform: none;
+    }
+}
+@keyframes brand-marquee {
+    to {
+        transform: translateX(-50%);
     }
 }
 /* Keep the banner beneath the pinned intro until the circular wipe finishes. */
