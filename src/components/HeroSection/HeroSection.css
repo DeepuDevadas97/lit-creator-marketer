@@ -10,4 +10,6 @@
 @media(max-width:600px){.loader-meter{width:220px;height:220px}.loader-mark{font-size:78px}.loader-word{margin-bottom:24px}.loader-side-note{left:15px}.loader-bottom-note{right:18px;bottom:23px;font-size:7px}.loader-prompt{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.scroll-mouse:after{animation:none}}
 /* Keep the banner beneath the pinned intro until the circular wipe finishes. */
-.scroll-loader{z-index:2;clip-path:circle(150% at 50% 50%);will-change:clip-path,background-color}.landing-screen{position:relative;z-index:1;margin-top:-100svh}
+.scroll-loader{z-index:2;clip-path:circle(150% at 50% 50%);will-change:clip-path,background-color;pointer-events:none;user-select:none}.landing-screen{position:relative;z-index:1;margin-top:-100svh;pointer-events:auto;user-select:text}
+/* ScrollTrigger's generated spacer can overlap the landing page during pinning. Keep it out of hit testing. */
+.pin-spacer{pointer-events:none!important}

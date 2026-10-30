@@ -1,1 +1,12 @@
 #root{min-height:100vh}.app-shell{min-height:100vh}
+
+.pin-spacer {
+  position: relative;
+  z-index: 1;
+}
+
+button,
+a {
+  position: relative;
+  z-index: 2;
+}
