@@ -238,7 +238,7 @@ export default function ChallengesSection() {
           ))}
         </div>
 
-        <div className="challenge-layout grid grid-cols-[.78fr_1.22fr] gap-5 max-[1000px]:grid-cols-1" id="challenge-panel" role="tabpanel" aria-labelledby={`challenge-tab-${activeTrack}`}>
+        <div className="challenge-layout grid grid-cols-[.78fr_1.22fr] gap-8 max-[1000px]:grid-cols-1" id="challenge-panel" role="tabpanel" aria-labelledby={`challenge-tab-${activeTrack}`}>
           <article className="epic-card h-full overflow-hidden rounded-[28px] border border-white/15 bg-[#09090b]">
             <div className="epic-art">
               <img src={active.image} alt={`${active.name} challenge track`} loading="lazy" />
@@ -259,7 +259,7 @@ export default function ChallengesSection() {
 
           <div className="brand-challenges-wrap">
             <p className="mb-4 mt-2 text-sm uppercase tracking-[.14em] text-white/80">Challenges from this epic</p>
-            <div className="brand-challenge-grid grid grid-cols-2 gap-3 max-[700px]:grid-cols-1">
+            <div className="brand-challenge-grid grid grid-cols-2 gap-6 max-[700px]:grid-cols-1">
               {brands.map((brand, index) => (
                 <article className={`brand-challenge brand-challenge-${index + 1} brand-${brand.color}`} key={brand.name}>
                   <div className="brand-card-motion">
