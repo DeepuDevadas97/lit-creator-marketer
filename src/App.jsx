@@ -7,6 +7,7 @@ import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import "./App.css";
 import Testimonials2 from "./components/Testimonials2/Testimonials2";
 import LifeAtLitSection from "./components/LifeAtLitSection/LifeAtLitSection";
+import RolesSection from "./components/RolesSection/RolesSection";
 
 export default function App() {
     return (
@@ -18,7 +19,9 @@ export default function App() {
             <ChallengesSection />
             <CreativityAISection />
             <Testimonials2 />
-            <LifeAtLitSection/>
+            <RolesSection />
+            <LifeAtLitSection />
+            
         </main>
     );
 }
