@@ -8,6 +8,7 @@ import "./App.css";
 import Testimonials2 from "./components/Testimonials2/Testimonials2";
 import LifeAtLitSection from "./components/LifeAtLitSection/LifeAtLitSection";
 import RolesSection from "./components/RolesSection/RolesSection";
+import ScholarshipsSection from "./components/ScholarshipsSection/ScholarshipsSection";
 
 export default function App() {
     return (
@@ -21,7 +22,7 @@ export default function App() {
             <Testimonials2 />
             <RolesSection />
             <LifeAtLitSection />
-            
+            <ScholarshipsSection />
         </main>
     );
 }
