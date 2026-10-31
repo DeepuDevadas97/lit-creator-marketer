@@ -104,31 +104,7 @@
   line-height: 1.42;
 }
 
-@media (max-width: 1000px) and (min-width: 769px) {
-  .life-stories-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    padding: 8vh 24px 20px;
-  }
-  .life-stories-page-first .life-stories-grid { padding-left: 40px; }
-  .life-story-card { flex-direction: column; }
-  .life-story-image { width: 100%; height: 105px; }
-  .life-story-copy { padding: 12px; }
-  .life-story-accent { width: 42px; height: 5px; margin-bottom: 8px; }
-  .life-story-copy h3 { margin-top: 6px; font-size: 16px; }
-  .life-story-copy p {
-    display: -webkit-box;
-    overflow: hidden;
-    margin-top: 8px;
-    font-size: 12px;
-    line-height: 1.35;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
   .life-marquee {
     height: auto;
     min-height: 0;
@@ -139,8 +115,8 @@
     top: auto;
     left: auto;
     width: 100%;
-    padding: 24px 14px 12px;
-    font-size: clamp(36px, 9vw, 48px);
+    padding: 24px 18px 12px;
+    font-size: clamp(38px, 6vw, 58px);
   }
   .life-marquee-frame {
     position: relative !important;
@@ -151,7 +127,7 @@
     translate: none !important;
     transform: none !important;
     rotate: none !important;
-    padding: 0 16px;
+    padding: 0 24px;
   }
   .life-marquee-images {
     position: relative !important;
@@ -164,7 +140,7 @@
     display: flex !important;
     justify-content: flex-start !important;
     align-items: stretch !important;
-    gap: 12px !important;
+    gap: 14px !important;
     overflow-x: auto;
     padding: 8px 0 14px;
     scrollbar-width: none;
@@ -172,26 +148,48 @@
   }
   .life-marquee-images::-webkit-scrollbar { display: none; }
   .life-marquee-item {
-    width: min(78vw, 300px) !important;
+    width: min(42vw, 380px) !important;
     height: auto !important;
-    flex: 0 0 min(78vw, 300px) !important;
+    flex: 0 0 min(42vw, 380px) !important;
     aspect-ratio: 3 / 2;
-    border-radius: 16px;
+    border-radius: 18px;
   }
+  .life-stories-stage { height: auto; overflow: visible; }
+  .life-stories-track { width: 100%; height: auto; flex-direction: column; transform: none !important; }
+  .life-stories-spacer { display: none; }
   .life-stories-page { width: 100%; height: auto; }
   .life-stories-grid {
     height: auto;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
-    gap: 14px;
-    padding: 0 16px 28px;
+    gap: 16px;
+    padding: 20px 24px 32px;
   }
-  .life-stories-page-first .life-stories-grid { padding: 0 16px 28px; }
-  .life-story-card { min-height: 0; flex-direction: column; border-radius: 20px; }
-  .life-story-image { width: 100%; height: clamp(160px, 48vw, 210px); }
-  .life-story-copy { padding: 20px; }
+  .life-stories-page-first .life-stories-grid { padding-left: 24px; }
+  .life-story-card { min-height: 260px; flex-direction: row; border-radius: 22px; }
+  .life-story-image { width: 36%; height: auto; min-height: 260px; }
+  .life-story-copy { padding: clamp(18px, 3vw, 28px); }
   .life-story-accent { width: 48px; height: 6px; margin-bottom: 14px; }
   .life-story-category { font-size: 10px; }
+  .life-story-copy h3 { font-size: clamp(19px, 2.5vw, 26px); }
+  .life-story-copy p { margin-top: 12px; font-size: clamp(14px, 1.5vw, 16px); line-height: 1.5; }
+}
+
+@media (max-width: 768px) {
+  .life-stories-heading { padding: 20px 14px 10px; font-size: clamp(36px, 9vw, 48px); }
+  .life-marquee-frame { padding: 0 16px; }
+  .life-marquee-images { gap: 12px !important; }
+  .life-marquee-item {
+    width: min(78vw, 300px) !important;
+    flex-basis: min(78vw, 300px) !important;
+    border-radius: 16px;
+  }
+  .life-stories-grid { gap: 14px; padding: 0 16px 28px; }
+  .life-stories-page-first .life-stories-grid { padding: 0 16px 28px; }
+  .life-story-card { min-height: 0; flex-direction: column; border-radius: 20px; }
+  .life-story-image { width: 100%; height: clamp(160px, 48vw, 210px); min-height: 0; }
+  .life-story-copy { padding: 20px; }
+  .life-story-accent { margin-bottom: 14px; }
   .life-story-copy h3 { font-size: clamp(19px, 5vw, 22px); }
   .life-story-copy p { margin-top: 12px; font-size: 14px; line-height: 1.5; }
 }

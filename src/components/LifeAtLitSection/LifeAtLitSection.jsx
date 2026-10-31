@@ -105,7 +105,7 @@ export default function LifeAtLitSection() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger, Flip);
 
-        const isMobile = window.innerWidth <= 768;
+        const isStaticLayout = window.innerWidth < 1200;
 
         const container = containerRef.current;
         const marqueeSection = marqueeSectionRef.current;
@@ -125,7 +125,7 @@ export default function LifeAtLitSection() {
             return;
         }
 
-        if (isMobile) {
+        if (isStaticLayout) {
             pinnedMedia.querySelector('[data-role="pinned-video"]')?.pause();
             return undefined;
         }
@@ -408,7 +408,7 @@ export default function LifeAtLitSection() {
                 {/* MARQUEE */}
                 <section
                     ref={marqueeSectionRef}
-                    className="life-marquee relative w-full h-[50svh] overflow-hidden"
+                    className="life-marquee relative w-full h-[50svh] overflow-hidden max-[1199px]:h-auto max-[1199px]:overflow-hidden"
                 >
                     <h2 className="life-stories-heading">
                         <em>Life at</em> LIT
@@ -470,16 +470,16 @@ export default function LifeAtLitSection() {
                 {/* HORIZONTAL SCROLL */}
                 <section
                     ref={horizontalScrollRef}
-                    className="life-stories-stage relative w-full h-[100svh] overflow-hidden max-[768px]:h-auto max-[768px]:overflow-visible"
+                    className="life-stories-stage relative w-full h-[100svh] overflow-hidden max-[1199px]:h-auto max-[1199px]:overflow-visible"
                 >
                     <div
                         ref={horizontalScrollWrapperRef}
-                        className="life-stories-track relative w-[300%] h-[100svh] flex will-change-transform max-[768px]:w-full max-[768px]:h-auto max-[768px]:flex-col"
+                        className="life-stories-track relative w-[300%] h-[100svh] flex will-change-transform max-[1199px]:w-full max-[1199px]:h-auto max-[1199px]:flex-col"
                     >
-                        <div className="life-stories-spacer flex-none w-1/3 h-full max-[768px]:hidden" aria-hidden="true" />
+                        <div className="life-stories-spacer flex-none w-1/3 h-full max-[1199px]:hidden" aria-hidden="true" />
 
                         {STORY_PAGES.map((stories, pageIndex) => (
-                            <div className={`life-stories-page flex-none w-1/3 h-full ${pageIndex === 0 ? "life-stories-page-first" : ""}`} key={`story-page-${pageIndex}`}>
+                            <div className={`life-stories-page flex-none w-1/3 h-full max-[1199px]:w-full max-[1199px]:h-auto ${pageIndex === 0 ? "life-stories-page-first" : ""}`} key={`story-page-${pageIndex}`}>
                                 <div className="life-stories-grid">
                                     {stories.map((story) => (
                                         <article className="life-story-card" key={story.title}>
