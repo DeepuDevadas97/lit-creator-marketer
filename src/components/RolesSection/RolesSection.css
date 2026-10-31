@@ -1,5 +1,5 @@
 .roles-section {
-  padding: 74px clamp(20px, 1.4vw, 28px) 90px;
+  padding: 74px var(--site-page-gutter) 90px;
   color: #f7f7f7;
   background-color: #0b0c0c;
   background-image:
@@ -9,7 +9,7 @@
 }
 
 .roles-container {
-  width: min(100%, 1740px);
+  width: min(100%, var(--site-container-width));
   margin: 0 auto;
 }
 
@@ -114,8 +114,12 @@
   .role-card { min-height: 340px; }
 }
 
+@media (max-width: 900px) {
+  .roles-section { padding-right: 20px; padding-left: 20px; }
+}
+
 @media (max-width: 620px) {
-  .roles-section { padding: 58px 18px 64px; }
+  .roles-section { padding-top: 58px; padding-bottom: 64px; }
   .roles-container > h2 { margin-bottom: 32px; font-size: clamp(36px, 10vw, 52px); }
   .roles-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .role-card { min-height: 0; padding: 24px; border-radius: 22px; }

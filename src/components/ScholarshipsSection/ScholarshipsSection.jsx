@@ -99,11 +99,11 @@ export default function ScholarshipsSection() {
 
     return (
         <section
-            className="bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] px-5 py-6 text-[#f7f7f7] md:px-10 xl:px-20"
+            className="bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] px-[var(--site-page-gutter)] py-6 text-[#f7f7f7] max-[900px]:px-5"
             ref={sectionRef}
             aria-labelledby="scholarships-title"
         >
-            <div className="relative isolate mx-auto grid min-h-[700px] w-full max-w-[1740px] grid-cols-[minmax(400px,1fr)_minmax(0,1.65fr)] gap-10 overflow-hidden rounded-[32px] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,.34)] max-[1300px]:grid-cols-[minmax(320px,1fr)_minmax(0,1.65fr)] max-[760px]:grid-cols-1 max-[760px]:gap-0 max-[760px]:rounded-[22px]">
+            <div className="relative isolate mx-auto grid min-h-[700px] w-full max-w-[var(--site-container-width)] grid-cols-[minmax(400px,1fr)_minmax(0,1.65fr)] gap-10 overflow-hidden rounded-[32px] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,.34)] max-[1300px]:grid-cols-[minmax(320px,1fr)_minmax(0,1.65fr)] max-[760px]:grid-cols-1 max-[760px]:gap-0 max-[760px]:rounded-[22px]">
                 <img
                     className="absolute inset-0 z-0 h-full w-full object-cover object-[center_44%] max-[760px]:object-[42%_center]"
                     src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=2200&q=90"
