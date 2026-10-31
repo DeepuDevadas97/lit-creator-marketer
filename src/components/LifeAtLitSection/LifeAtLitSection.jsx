@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import "./LifeAtLitSection.css";
+import EventVideo from "../../assets/videos/event-video.mp4"
 
 const LIGHT = "#0b0c0c";
 const DARK = "#0b0c0c";
@@ -14,7 +15,7 @@ const MARQUEE_IMAGES = [
     "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=85",
     "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=85",
     "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=85",
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85",
+    "https://images.pexels.com/videos/36703282/pexels-photo-36703282.jpeg?auto=compress&dpr=1&h=750&w=1260",
     "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85",
     "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85",
     "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=85",
@@ -28,7 +29,7 @@ const MARQUEE_IMAGES = [
 ];
 
 const PINNED_IMAGE_INDEX = 8;
-const PINNED_VIDEO_SRC = "/stats/slide-video.mp4";
+const PINNED_VIDEO_SRC = EventVideo;
 
 const STORY_PAGES = [
     [
@@ -142,6 +143,8 @@ export default function LifeAtLitSection() {
 
         let pinnedMarqueeImgClone = null;
         let isImgCloneActive = false;
+        let pinnedVideoElement = null;
+        let pinnedVideoPlaceholder = null;
 
         function createPinnedMarqueeImgClone() {
             if (isImgCloneActive) return;
@@ -151,6 +154,16 @@ export default function LifeAtLitSection() {
             const centerY = rect.top + rect.height / 2;
 
             pinnedMarqueeImgClone = pinnedMedia.cloneNode(true);
+            pinnedVideoElement = pinnedMedia.querySelector('[data-role="pinned-video"]');
+            const clonedVideo = pinnedMarqueeImgClone.querySelector('[data-role="pinned-video"]');
+
+            // Move the live video node into the FLIP layer so playback continues
+            // through the expansion instead of restarting from its poster.
+            if (pinnedVideoElement && clonedVideo) {
+                pinnedVideoPlaceholder = document.createComment("pinned-video-placeholder");
+                pinnedVideoElement.replaceWith(pinnedVideoPlaceholder);
+                clonedVideo.replaceWith(pinnedVideoElement);
+            }
 
             gsap.set(pinnedMarqueeImgClone, {
                 position: "fixed",
@@ -180,8 +193,11 @@ export default function LifeAtLitSection() {
             );
 
             if (cloneVideo) {
-                cloneVideo.currentTime = 0;
-
+                cloneVideo.muted = true;
+                cloneVideo.autoplay = true;
+                cloneVideo.loop = true;
+                cloneVideo.playsInline = true;
+                cloneVideo.preload = "auto";
                 cloneVideo.play().catch(() => {});
             }
 
@@ -200,14 +216,14 @@ export default function LifeAtLitSection() {
             if (!isImgCloneActive) return;
 
             if (pinnedMarqueeImgClone) {
-                const cloneVideo = pinnedMarqueeImgClone.querySelector(
-                    '[data-role="pinned-video"]',
-                );
-
-                cloneVideo?.pause();
+                if (pinnedVideoElement && pinnedVideoPlaceholder?.parentNode) {
+                    pinnedVideoPlaceholder.replaceWith(pinnedVideoElement);
+                }
 
                 pinnedMarqueeImgClone.remove();
                 pinnedMarqueeImgClone = null;
+                pinnedVideoElement = null;
+                pinnedVideoPlaceholder = null;
             }
 
             gsap.set(pinnedMedia, { opacity: 1 });
@@ -243,6 +259,11 @@ export default function LifeAtLitSection() {
                     isImgCloneActive &&
                     !flipAnimation
                 ) {
+                    pinnedMarqueeImgClone
+                        .querySelector('[data-role="pinned-video"]')
+                        ?.play()
+                        .catch(() => {});
+
                     const state = Flip.getState(pinnedMarqueeImgClone);
 
                     gsap.set(pinnedMarqueeImgClone, {
@@ -393,16 +414,17 @@ export default function LifeAtLitSection() {
                                     >
                                         <div
                                             ref={pinnedMediaRef}
-                                            className="relative w-full h-full"
+                                            className="relative w-full h-full bg-black"
                                         >
                                             <video
                                                 data-role="pinned-video"
                                                 src={PINNED_VIDEO_SRC}
                                                 poster={src}
+                                                autoPlay
                                                 muted
                                                 loop
                                                 playsInline
-                                                preload="metadata"
+                                                preload="auto"
                                                 className="w-full h-full object-cover"
                                             />
 
