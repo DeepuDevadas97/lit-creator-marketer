@@ -654,7 +654,7 @@
         font-size: 7px;
     }
     .loader-prompt {
-        font-size: 9px;
+        font-size: 16px;
     }
 }
 @media (prefers-reduced-motion: reduce) {

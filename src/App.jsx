@@ -5,6 +5,7 @@ import ChallengesSection from "./components/ChallengesSection/ChallengesSection"
 import CreativityAISection from "./components/CreativityAISection/CreativityAISection";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import "./App.css";
+import Testimonials2 from "./components/Testimonials2/Testimonials2";
 
 export default function App() {
     return (
@@ -15,6 +16,7 @@ export default function App() {
             <JobGuaranteeSection />
             <ChallengesSection />
             <CreativityAISection />
+            <Testimonials2 />
         </main>
     );
 }
