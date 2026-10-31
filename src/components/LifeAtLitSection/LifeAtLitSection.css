@@ -83,7 +83,7 @@
 
 .life-story-category {
   color: #fff12c;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: .14em;
   line-height: 1.2;
@@ -91,7 +91,7 @@
 
 .life-story-copy h3 {
   margin: 8px 0 0;
-  font-size: clamp(17px, 1.15vw, 22px);
+  font-size: clamp(20px, 1.35vw, 25px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -.04em;
@@ -100,7 +100,7 @@
 .life-story-copy p {
   margin: 12px 0 0;
   color: rgba(255,255,255,.74);
-  font-size: clamp(13px, .9vw, 16px);
+  font-size: clamp(15px, 1vw, 18px);
   line-height: 1.42;
 }
 
@@ -170,9 +170,9 @@
   .life-story-image { width: 36%; height: auto; min-height: 260px; }
   .life-story-copy { padding: clamp(18px, 3vw, 28px); }
   .life-story-accent { width: 48px; height: 6px; margin-bottom: 14px; }
-  .life-story-category { font-size: 10px; }
-  .life-story-copy h3 { font-size: clamp(19px, 2.5vw, 26px); }
-  .life-story-copy p { margin-top: 12px; font-size: clamp(14px, 1.5vw, 16px); line-height: 1.5; }
+  .life-story-category { font-size: 11px; }
+  .life-story-copy h3 { font-size: clamp(21px, 2.7vw, 28px); }
+  .life-story-copy p { margin-top: 12px; font-size: clamp(15px, 1.6vw, 17px); line-height: 1.5; }
 }
 
 @media (max-width: 768px) {
@@ -190,6 +190,6 @@
   .life-story-image { width: 100%; height: clamp(160px, 48vw, 210px); min-height: 0; }
   .life-story-copy { padding: 20px; }
   .life-story-accent { margin-bottom: 14px; }
-  .life-story-copy h3 { font-size: clamp(19px, 5vw, 22px); }
-  .life-story-copy p { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+  .life-story-copy h3 { font-size: clamp(20px, 5.2vw, 24px); }
+  .life-story-copy p { margin-top: 12px; font-size: 15px; line-height: 1.5; }
 }

@@ -9,6 +9,7 @@ import Testimonials2 from "./components/Testimonials2/Testimonials2";
 import LifeAtLitSection from "./components/LifeAtLitSection/LifeAtLitSection";
 import RolesSection from "./components/RolesSection/RolesSection";
 import ScholarshipsSection from "./components/ScholarshipsSection/ScholarshipsSection";
+import BrandPromiseSection from "./components/BrandPromiseSection/BrandPromiseSection";
 
 export default function App() {
     return (
@@ -23,6 +24,7 @@ export default function App() {
             <RolesSection />
             <LifeAtLitSection />
             <ScholarshipsSection />
+            <BrandPromiseSection />
         </main>
     );
 }

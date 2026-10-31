@@ -1,0 +1,27 @@
+.promise-line {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .22em;
+  overflow: hidden;
+}
+
+.promise-word {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 .02em .12em;
+  margin-bottom: -.12em;
+  perspective: 500px;
+}
+
+.promise-word-inner {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promise-word-inner {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
