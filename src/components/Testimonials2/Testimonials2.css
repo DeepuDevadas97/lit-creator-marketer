@@ -34,6 +34,31 @@
   line-height: 1.5;
 }
 
+.mentor-row-wrap {
+  position: relative;
+}
+
+.mentor-row-wrap::before,
+.mentor-row-wrap::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: clamp(48px, 7vw, 132px);
+  content: '';
+  pointer-events: none;
+}
+
+.mentor-row-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, #0b0c0c 0%, rgba(11,12,12,.88) 24%, transparent 100%);
+}
+
+.mentor-row-wrap::after {
+  right: 0;
+  background: linear-gradient(270deg, #0b0c0c 0%, rgba(11,12,12,.88) 24%, transparent 100%);
+}
+
 .mentor-row {
   display: flex;
   gap: 8px;
@@ -149,5 +174,7 @@
   .mentor-heading p { margin-top: 18px; }
   .mentor-desktop-break { display: none; }
   .mentor-row { gap: 10px; padding: 0 18px; }
+  .mentor-row-wrap::before,
+  .mentor-row-wrap::after { width: 34px; }
   .mentor-card { flex-basis: min(78vw, 300px); height: 390px; border-radius: 32px; }
 }

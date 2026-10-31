@@ -145,19 +145,21 @@ export default function Testimonials2() {
         <p>LIT isn't run by academics, it's driven by the creators, marketers, and founders shaping the future. Our<br className="mentor-desktop-break" /> mentors come from the trenches, not textbooks.</p>
       </div>
 
-      <div className="mentor-row" ref={rowRef} aria-label="LIT mentors" data-lenis-prevent-wheel tabIndex={0}>
-        {[...mentors, ...mentors].map((mentor, index) => (
-          <article className="mentor-card" key={`${mentor.name}-${index}`} aria-hidden={index >= mentors.length || undefined}>
-            <img className="mentor-photo" src={mentor.image} alt={mentor.alt} loading="lazy" />
-            <span className="mentor-arrow" aria-hidden="true">↗</span>
-            <div className="mentor-info">
-              <span className="mentor-accent" />
-              <h3>{mentor.name}</h3>
-              <p>{mentor.role}</p>
-            </div>
-            <div className="mentor-organization">{mentor.organization}</div>
-          </article>
-        ))}
+      <div className="mentor-row-wrap">
+        <div className="mentor-row" ref={rowRef} aria-label="LIT mentors" data-lenis-prevent-wheel tabIndex={0}>
+          {[...mentors, ...mentors].map((mentor, index) => (
+            <article className="mentor-card" key={`${mentor.name}-${index}`} aria-hidden={index >= mentors.length || undefined}>
+              <img className="mentor-photo" src={mentor.image} alt={mentor.alt} loading="lazy" />
+              <span className="mentor-arrow" aria-hidden="true">↗</span>
+              <div className="mentor-info">
+                <span className="mentor-accent" />
+                <h3>{mentor.name}</h3>
+                <p>{mentor.role}</p>
+              </div>
+              <div className="mentor-organization">{mentor.organization}</div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

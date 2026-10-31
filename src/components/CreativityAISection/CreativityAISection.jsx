@@ -146,10 +146,12 @@ export default function CreativityAISection() {
             {principles.map((principle) => (
               <article className={`principle-card principle-${principle.tone}`} key={principle.step}>
                 <div className="principle-image"><img src={principle.image} alt={principle.alt} loading="lazy" /></div>
-                <div className="principle-content">
-                  <span className="principle-step">{principle.step}</span>
-                  <h3>{principle.title}</h3>
-                  <p>{principle.body}</p>
+                <div className="principle-content flex flex-col justify-between flex-1">
+                  <span className="principle-step w-fit">{principle.step}</span>
+                  <div>
+                    <h3>{principle.title}</h3>
+                    <p className='min-h-[61px] line-clamp-3'>{principle.body}</p>
+                  </div>
                 </div>
               </article>
             ))}
