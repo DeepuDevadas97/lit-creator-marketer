@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import "./LifeAtLitSection.css";
 
-const LIGHT = "#000";
-const DARK = "#000";
+const LIGHT = "#0b0c0c";
+const DARK = "#0b0c0c";
 
 const MARQUEE_IMAGES = [
     "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=85",
@@ -370,23 +370,26 @@ export default function LifeAtLitSection() {
         <>
             <div
                 ref={containerRef}
-                className="relative w-full h-full bg-[#000] [will-change:background-color] font-sans"
+                className="relative w-full h-full bg-[#0b0c0c] [will-change:background-color] font-sans"
             >
                 {/* MARQUEE */}
                 <section
                     ref={marqueeSectionRef}
                     className="relative w-full h-[50svh] overflow-hidden"
                 >
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] w-[150%] h-full max-[1000px]:w-[300%]">
+                    <h2 className="life-stories-heading">
+                        <em>Life at</em> LIT
+                    </h2>
+                    <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] w-[150%] h-full max-[1000px]:w-[300%]">
                         <div
                             ref={marqueeImagesRef}
-                            className="absolute top-1/2 left-1/2 translate-x-[-75%] translate-y-[-50%] w-[200%] h-full flex justify-between items-center gap-4 will-change-transform"
+                            className="absolute top-1/2 left-1/2 translate-x-[-75%] translate-y-[-50%] w-[230%] h-full flex justify-between items-center gap-4 will-change-transform"
                         >
                             {MARQUEE_IMAGES.map((src, index) =>
                                 index === PINNED_IMAGE_INDEX ? (
                                     <div
                                         key={src}
-                                        className="flex-1 w-full aspect-[5/3] rounded-xl overflow-hidden"
+                                        className="flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
                                     >
                                         <div
                                             ref={pinnedMediaRef}
@@ -417,7 +420,7 @@ export default function LifeAtLitSection() {
                                 ) : (
                                     <div
                                         key={src}
-                                        className="flex-1 w-full aspect-[5/3] rounded-xl overflow-hidden"
+                                        className="flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
                                     >
                                         <img
                                             src={src}
@@ -436,9 +439,6 @@ export default function LifeAtLitSection() {
                     ref={horizontalScrollRef}
                     className="life-stories-stage relative w-full h-[100svh] overflow-hidden max-[768px]:h-auto max-[768px]:overflow-visible"
                 >
-                    <h2 className="life-stories-heading">
-                        <em>Life at</em> LIT
-                    </h2>
                     <div
                         ref={horizontalScrollWrapperRef}
                         className="life-stories-track relative w-[300%] h-[100svh] flex will-change-transform max-[768px]:w-full max-[768px]:h-auto max-[768px]:flex-col"

@@ -1,15 +1,16 @@
 .life-stories-stage {
   position: relative;
-  background:
-    radial-gradient(ellipse at 3% 90%, rgba(125, 42, 27, .58), transparent 43%),
-    radial-gradient(ellipse at 94% 100%, rgba(104, 42, 78, .5), transparent 45%),
-    #090909;
+  background-color: #0b0c0c;
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 .life-stories-heading {
   position: absolute;
-  z-index: 2;
-  top: clamp(28px, 7vh, 76px);
+  z-index: 10;
+  top: clamp(18px, 3vh, 34px);
   left: 0;
   width: 100%;
   margin: 0;
@@ -33,7 +34,7 @@
   height: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  padding: clamp(150px, 20vh, 210px) 24px 30px;
+  padding: 8vh 24px 30px;
 }
 
 .life-story-card {
@@ -103,7 +104,7 @@
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: repeat(2, minmax(0, 1fr));
     gap: 12px;
-    padding: 16vh 24px 20px;
+    padding: 8vh 24px 20px;
   }
   .life-story-copy { padding: 18px 22px; }
   .life-story-accent { margin-bottom: 12px; }
@@ -111,8 +112,7 @@
 }
 
 @media (max-width: 768px) {
-  .life-stories-stage { padding-top: 92px; }
-  .life-stories-heading { top: 24px; font-size: clamp(38px, 10vw, 54px); }
+  .life-stories-heading { top: 18px; font-size: clamp(38px, 10vw, 54px); }
   .life-stories-page { width: 100%; height: auto; }
   .life-stories-grid {
     height: auto;
