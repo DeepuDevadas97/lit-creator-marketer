@@ -10,7 +10,7 @@ const audiences = [
         title: "Fresh Graduates",
         description:
             "Sitting on a degree with no real skills to show for it, and interviews going nowhere.",
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=85",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85",
         alt: "Graduates celebrating together after finishing college",
         color: "amber",
         imageFirst: true,
@@ -128,49 +128,26 @@ export default function AudienceSection() {
                 </h2>
                 <div className="audience-grid grid grid-cols-4 gap-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 max-[600px]:gap-4">
                     {audiences.map((audience, index) => {
-                        const image = (
-                            <div
-                                className={`audience-image audience-image-${audience.color}`}
-                            >
-                                <img
-                                    src={audience.image}
-                                    alt={audience.alt}
-                                    loading="lazy"
-                                />
-                                <div className="audience-image-caption">
-                                    <span
-                                        className="audience-arrow"
-                                        aria-hidden="true"
-                                    >
-                                        ↗
-                                    </span>
-                                    <h3>{audience.title}</h3>
-                                </div>
-                            </div>
-                        );
-
-                        const copy = (
-                            <div className="audience-copy">
-                                {audience.intro && (
-                                    <p className="audience-intro">
-                                        {audience.intro}
-                                    </p>
-                                )}
-                                {audience.description && (
-                                    <p className="audience-description">
-                                        {audience.description}
-                                    </p>
-                                )}
-                            </div>
-                        );
-
                         return (
                             <article
-                                className={`audience-card audience-card-${index + 1}`}
+                                className={`audience-card audience-card-${index + 1} audience-card-${audience.color}`}
                                 key={audience.title}
                             >
-                                {audience.imageFirst ? image : copy}
-                                {audience.imageFirst ? copy : image}
+                                <div className={`audience-image audience-image-${audience.color}`}>
+                                    <img
+                                        src={audience.image}
+                                        alt={audience.alt}
+                                        loading="lazy"
+                                    />
+                                    <div className="audience-image-caption">
+                                        <span className="audience-arrow" aria-hidden="true">↗</span>
+                                        <h3>{audience.title}</h3>
+                                    </div>
+                                </div>
+                                <div className="audience-copy">
+                                    {audience.intro && <p className="audience-intro">{audience.intro}</p>}
+                                    {audience.description && <p className="audience-description">{audience.description}</p>}
+                                </div>
                             </article>
                         );
                     })}

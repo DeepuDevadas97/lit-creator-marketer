@@ -546,7 +546,7 @@
     stroke-width: 2;
 }
 .loader-ring-track {
-    stroke: rgba(255, 255, 255, 0.14);
+    stroke: rgba(54, 233, 156, 0.2);
 }
 .loader-ring-progress {
     stroke: #36e99c;
