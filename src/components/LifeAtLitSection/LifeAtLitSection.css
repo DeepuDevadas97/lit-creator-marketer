@@ -129,21 +129,69 @@
 }
 
 @media (max-width: 768px) {
-  .life-stories-heading { top: 18px; font-size: clamp(38px, 10vw, 54px); }
+  .life-marquee {
+    height: auto;
+    min-height: 0;
+    padding: 0 0 16px;
+  }
+  .life-stories-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 24px 14px 12px;
+    font-size: clamp(36px, 9vw, 48px);
+  }
+  .life-marquee-frame {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    translate: none !important;
+    transform: none !important;
+    rotate: none !important;
+    padding: 0 16px;
+  }
+  .life-marquee-images {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    translate: none !important;
+    transform: none !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    overflow-x: auto;
+    padding: 8px 0 14px;
+    scrollbar-width: none;
+    touch-action: pan-x;
+  }
+  .life-marquee-images::-webkit-scrollbar { display: none; }
+  .life-marquee-item {
+    width: min(78vw, 300px) !important;
+    height: auto !important;
+    flex: 0 0 min(78vw, 300px) !important;
+    aspect-ratio: 3 / 2;
+    border-radius: 16px;
+  }
   .life-stories-page { width: 100%; height: auto; }
   .life-stories-grid {
     height: auto;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
-    gap: 16px;
-    padding: 0 18px 30px;
+    gap: 14px;
+    padding: 0 16px 28px;
   }
-  .life-stories-page-first .life-stories-grid { padding: 0 18px 30px; }
-  .life-story-card { flex-direction: column; border-radius: 22px; }
-  .life-story-image { width: 100%; height: 220px; }
-  .life-story-copy { padding: 22px; }
-  .life-story-accent { margin-bottom: 16px; }
+  .life-stories-page-first .life-stories-grid { padding: 0 16px 28px; }
+  .life-story-card { min-height: 0; flex-direction: column; border-radius: 20px; }
+  .life-story-image { width: 100%; height: clamp(160px, 48vw, 210px); }
+  .life-story-copy { padding: 20px; }
+  .life-story-accent { width: 48px; height: 6px; margin-bottom: 14px; }
   .life-story-category { font-size: 10px; }
-  .life-story-copy h3 { font-size: 21px; }
-  .life-story-copy p { margin-top: 14px; font-size: 15px; }
+  .life-story-copy h3 { font-size: clamp(19px, 5vw, 22px); }
+  .life-story-copy p { margin-top: 12px; font-size: 14px; line-height: 1.5; }
 }

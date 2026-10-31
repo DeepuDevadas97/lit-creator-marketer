@@ -126,27 +126,11 @@ export default function LifeAtLitSection() {
         }
 
         if (isMobile) {
-            const marqueeTween = gsap.to(marqueeImagesEl, {
-                scrollTrigger: {
-                    trigger: marqueeSection,
-                    start: "top bottom",
-                    end: "top top",
-                    scrub: true,
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        const xPosition = -75 + progress * 25;
-                        gsap.set(marqueeImagesEl, {
-                            x: `${xPosition}%`,
-                        });
-                    },
-                },
-            });
-
-            return () => {
-                marqueeTween.scrollTrigger?.kill();
-                marqueeTween.kill();
-            };
+            pinnedMedia.querySelector('[data-role="pinned-video"]')?.pause();
+            return undefined;
         }
+
+        pinnedMedia.querySelector('[data-role="pinned-video"]')?.play().catch(() => {});
 
         function interpolateColor(color1, color2, factor) {
             return gsap.utils.interpolate(color1, color2, factor);
@@ -424,21 +408,21 @@ export default function LifeAtLitSection() {
                 {/* MARQUEE */}
                 <section
                     ref={marqueeSectionRef}
-                    className="relative w-full h-[50svh] overflow-hidden"
+                    className="life-marquee relative w-full h-[50svh] overflow-hidden"
                 >
                     <h2 className="life-stories-heading">
                         <em>Life at</em> LIT
                     </h2>
-                    <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] w-[150%] h-full max-[1000px]:w-[300%]">
+                    <div className="life-marquee-frame absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] w-[150%] h-full max-[1000px]:w-[300%]">
                         <div
                             ref={marqueeImagesRef}
-                            className="absolute top-1/2 left-1/2 translate-x-[-75%] translate-y-[-50%] w-[230%] h-full flex justify-between items-center gap-4 will-change-transform"
+                            className="life-marquee-images absolute top-1/2 left-1/2 translate-x-[-75%] translate-y-[-50%] w-[230%] h-full flex justify-between items-center gap-4 will-change-transform"
                         >
                             {MARQUEE_IMAGES.map((src, index) =>
                                 index === PINNED_IMAGE_INDEX ? (
                                     <div
                                         key={src}
-                                        className="flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
+                                        className="life-marquee-item flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
                                     >
                                         <div
                                             ref={pinnedMediaRef}
@@ -448,7 +432,6 @@ export default function LifeAtLitSection() {
                                                 data-role="pinned-video"
                                                 src={PINNED_VIDEO_SRC}
                                                 poster={src}
-                                                autoPlay
                                                 muted
                                                 loop
                                                 playsInline
@@ -470,7 +453,7 @@ export default function LifeAtLitSection() {
                                 ) : (
                                     <div
                                         key={src}
-                                        className="flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
+                                        className="life-marquee-item flex-1 w-full aspect-[3/2] rounded-xl overflow-hidden"
                                     >
                                         <img
                                             src={src}
