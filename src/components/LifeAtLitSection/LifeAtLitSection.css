@@ -33,8 +33,13 @@
   width: 100%;
   height: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 16px;
   padding: 8vh 24px 30px;
+}
+
+.life-stories-page-first .life-stories-grid {
+  padding-left: 40px;
 }
 
 .life-story-card {
@@ -50,7 +55,7 @@
 
 .life-story-image {
   display: block;
-  width: 41%;
+  width: 36%;
   min-width: 0;
   flex: none;
   object-fit: cover;
@@ -62,7 +67,7 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(18px, 2vw, 34px);
+  padding: clamp(14px, 1.4vw, 24px);
   color: #f7f7f7;
 }
 
@@ -71,7 +76,7 @@
   width: 56px;
   height: 7px;
   flex: none;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   border-radius: 999px;
   background: #fff12c;
 }
@@ -86,29 +91,41 @@
 
 .life-story-copy h3 {
   margin: 8px 0 0;
-  font-size: clamp(18px, 1.3vw, 25px);
+  font-size: clamp(17px, 1.15vw, 22px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -.04em;
 }
 
 .life-story-copy p {
-  margin: 28px 0 0;
+  margin: 12px 0 0;
   color: rgba(255,255,255,.74);
-  font-size: clamp(14px, 1vw, 18px);
-  line-height: 1.55;
+  font-size: clamp(13px, .9vw, 16px);
+  line-height: 1.42;
 }
 
 @media (max-width: 1000px) and (min-width: 769px) {
   .life-stories-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     gap: 12px;
     padding: 8vh 24px 20px;
   }
-  .life-story-copy { padding: 18px 22px; }
-  .life-story-accent { margin-bottom: 12px; }
-  .life-story-copy p { margin-top: 12px; font-size: 14px; }
+  .life-stories-page-first .life-stories-grid { padding-left: 40px; }
+  .life-story-card { flex-direction: column; }
+  .life-story-image { width: 100%; height: 105px; }
+  .life-story-copy { padding: 12px; }
+  .life-story-accent { width: 42px; height: 5px; margin-bottom: 8px; }
+  .life-story-copy h3 { margin-top: 6px; font-size: 16px; }
+  .life-story-copy p {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.35;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
 }
 
 @media (max-width: 768px) {
@@ -117,9 +134,11 @@
   .life-stories-grid {
     height: auto;
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
     gap: 16px;
     padding: 0 18px 30px;
   }
+  .life-stories-page-first .life-stories-grid { padding: 0 18px 30px; }
   .life-story-card { flex-direction: column; border-radius: 22px; }
   .life-story-image { width: 100%; height: 220px; }
   .life-story-copy { padding: 22px; }

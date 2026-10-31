@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import "./LifeAtLitSection.css";
-import EventVideo from "../../assets/videos/event-video.mp4"
+import EventVideo from "../../assets/videos/event-video1.mp4"
 
 const LIGHT = "#0b0c0c";
 const DARK = "#0b0c0c";
@@ -47,6 +47,20 @@ const STORY_PAGES = [
             image: "https://images.unsplash.com/photo-1559223607-a43c990c692c?auto=format&fit=crop&w=1000&q=85",
             alt: "A woman speaking with an audience",
         },
+        {
+            category: "CREATOR WORKSHOP",
+            title: "Build It, Share It, Learn From It",
+            body: "Students turned rough ideas into short-form stories, tested their hooks, and learned how small creative choices shape audience response.",
+            image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85",
+            alt: "Creators collaborating around a laptop",
+        },
+        {
+            category: "CAMPAIGN LAB",
+            title: "Ideas That Move People",
+            body: "Teams worked through a live brief, shared concepts, and shaped a campaign around a real audience and a clear goal.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85",
+            alt: "A team planning a campaign together",
+        },
     ],
     [
         {
@@ -62,6 +76,20 @@ const STORY_PAGES = [
             body: "Students created meaningful narratives and brought a preschool’s story to life through thoughtful, audience-first video work.",
             image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85",
             alt: "Students collaborating on a creative project",
+        },
+        {
+            category: "BRAND STORYTELLING",
+            title: "Make the Message Memorable",
+            body: "Learners explored how a clear point of view, strong visuals, and concise storytelling can help a brand stand out.",
+            image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85",
+            alt: "A creative team discussing visual ideas",
+        },
+        {
+            category: "STUDENT SHOWCASE",
+            title: "From First Draft to Final Cut",
+            body: "Students brought their concepts through planning, production, and editing, then presented the finished work to their peers.",
+            image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85",
+            alt: "A camera ready to film a student project",
         },
     ],
 ];
@@ -468,7 +496,7 @@ export default function LifeAtLitSection() {
                         <div className="life-stories-spacer flex-none w-1/3 h-full max-[768px]:hidden" aria-hidden="true" />
 
                         {STORY_PAGES.map((stories, pageIndex) => (
-                            <div className="life-stories-page flex-none w-1/3 h-full" key={`story-page-${pageIndex}`}>
+                            <div className={`life-stories-page flex-none w-1/3 h-full ${pageIndex === 0 ? "life-stories-page-first" : ""}`} key={`story-page-${pageIndex}`}>
                                 <div className="life-stories-grid">
                                     {stories.map((story) => (
                                         <article className="life-story-card" key={story.title}>
