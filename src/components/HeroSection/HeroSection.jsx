@@ -27,24 +27,10 @@ export default function HeroSection() {
             const number = loader.current.querySelector(".loader-count");
             const ring = loader.current.querySelector(".loader-ring-progress");
             const siteHeader = document.querySelector(".site-header");
-            const lifeAtLitSection = document.querySelector(".life-at-lit-section");
-
-            if (siteHeader && lifeAtLitSection) {
-                ScrollTrigger.create({
-                    trigger: lifeAtLitSection,
-                    start: "top top",
-                    end: "bottom top",
-                    onEnter: () => gsap.set(siteHeader, { autoAlpha: 0, y: -24 }),
-                    onLeave: () => gsap.set(siteHeader, { autoAlpha: 1, y: 0, zIndex: 1000 }),
-                    onEnterBack: () => gsap.set(siteHeader, { autoAlpha: 0, y: -24 }),
-                    onLeaveBack: () => gsap.set(siteHeader, { autoAlpha: 1, y: 0, zIndex: 1000 }),
-                });
-            }
 
             if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 gsap.set(loader.current, { display: "none" });
                 gsap.set(landing.current, { marginTop: 0 });
-                if (siteHeader) gsap.set(siteHeader, { autoAlpha: 1, y: 0 });
                 return;
             }
 

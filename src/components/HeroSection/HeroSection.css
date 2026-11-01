@@ -654,7 +654,7 @@
         font-size: 7px;
     }
     .loader-prompt {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -681,7 +681,6 @@
 }
 .landing-screen {
     position: relative;
-    z-index: 1;
     margin-top: -100svh;
     pointer-events: auto;
     user-select: text;

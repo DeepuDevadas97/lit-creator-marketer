@@ -19,10 +19,10 @@ import Header from "./components/Header/Header";
 
 export default function App() {
     return (
-        <>
+        <div className="site-page">
+            <SmoothScroll />
             <Header />
             <main>
-                <SmoothScroll />
                 <HeroSection />
                 <AudienceSection />
                 <JobGuaranteeSection />
@@ -39,6 +39,6 @@ export default function App() {
                 <ContactSection />
             </main>
             <Footer />
-        </>
+        </div>
     );
 }

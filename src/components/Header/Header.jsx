@@ -49,7 +49,7 @@ export default function Header() {
     }, [programsOpen]);
 
     return (
-        <header className="site-header fixed inset-x-0 top-0 z-[1000] flex h-[84px] items-center gap-[clamp(35px,5vw,92px)] border-b border-white/10 bg-[#0b0c0c] px-[var(--site-page-gutter)] max-[900px]:h-[72px] max-[900px]:justify-between">
+        <header className="site-header sticky top-0 z-[1000] -mb-[84px] flex h-[84px] w-full items-center gap-[clamp(35px,5vw,92px)] border-b border-white/10 bg-[#0b0c0c] px-[var(--site-page-gutter)] max-[900px]:h-[72px] max-[900px]:-mb-[72px] max-[900px]:justify-between">
             <a
                 className="brand-mark flex shrink-0 items-center gap-[10px] text-[#f7f7f2] no-underline"
                 href="#top"
