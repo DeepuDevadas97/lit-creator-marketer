@@ -187,42 +187,55 @@ export default function PlacementOutcomesSection() {
                 <div className="grid min-w-0 grid-cols-3 gap-[14px] max-[680px]:grid-cols-2 max-[680px]:gap-[10px] max-[380px]:grid-cols-1">
                     {outcomes.map((outcome) => (
                         <article
-                            className="relative isolate aspect-[.86] min-w-0 overflow-hidden rounded-[22px] border border-white/10 bg-[#171717] max-[1050px]:aspect-[.95] max-[680px]:aspect-[.84] max-[680px]:rounded-[17px] max-[380px]:aspect-[1.08]"
+                            className="group/card relative aspect-[.86] min-w-0 [perspective:1000px] max-[1050px]:aspect-[.95] max-[680px]:aspect-[.84] max-[380px]:aspect-[1.08]"
                             key={outcome.name}
                         >
-                            <img
-                                className="absolute inset-0 z-0 h-full w-full object-cover object-[center_36%]"
-                                src={`https://images.unsplash.com/${outcome.image}?auto=format&fit=crop&w=720&q=85`}
-                                alt={outcome.alt}
-                                loading="lazy"
-                            />
-                            <div
-                                className="absolute inset-0 z-[1] bg-gradient-to-b from-black/5 via-black/10 to-black/95"
-                                aria-hidden="true"
-                            />
-                            <div className="absolute inset-x-0 bottom-0 z-[2] p-[clamp(12px,1.15vw,18px)] max-[680px]:p-[11px]">
-                                <h3 className="m-0 flex min-w-0 items-center gap-[7px] border-b border-white/30 pb-[10px] text-[clamp(14px,1.15vw,20px)] font-bold leading-[1.2] tracking-[-.035em] max-[680px]:gap-[5px] max-[680px]:pb-[7px] max-[680px]:text-[clamp(12px,3.5vw,16px)]">
-                                    <span
-                                        className="h-[10px] w-[10px] flex-none rounded-full bg-[#fff12c] max-[680px]:h-[8px] max-[680px]:w-[8px]"
+                            <div className="relative h-full w-full rounded-[22px] transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] [transform-style:preserve-3d] motion-safe:group-hover/card:[transform:rotateY(180deg)] motion-reduce:transition-none max-[680px]:rounded-[17px]">
+                                <div className="absolute inset-0 overflow-hidden rounded-[22px] border border-white/10 bg-[#171717] [backface-visibility:hidden] max-[680px]:rounded-[17px]">
+                                    <img
+                                        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_36%]"
+                                        src={`https://images.unsplash.com/${outcome.image}?auto=format&fit=crop&w=720&q=85`}
+                                        alt={outcome.alt}
+                                        loading="lazy"
+                                    />
+                                    <div
+                                        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/5 via-black/10 to-black/95"
                                         aria-hidden="true"
                                     />
-                                    {outcome.name}
-                                </h3>
-                                <div className="flex min-w-0 items-center gap-[9px] pt-[10px] max-[680px]:gap-[7px] max-[680px]:pt-[7px]">
-                                    <span
-                                        className="grid aspect-square w-[clamp(34px,3vw,52px)] flex-none place-items-center overflow-hidden rounded-full border border-white/15 bg-[#f6f6f2] text-center text-[12px] font-extrabold text-[#101010] max-[680px]:w-8 max-[680px]:text-[8px]"
-                                        aria-hidden="true"
-                                    >
-                                        {outcome.mark}
-                                    </span>
-                                    <div className="min-w-0">
-                                        <p className="m-0 break-words text-[clamp(11px,.95vw,15px)] font-semibold leading-[1.3] max-[680px]:text-[clamp(10px,3vw,13px)]">
-                                            {outcome.role}
-                                        </p>
-                                        <span className="mt-1 block break-words text-[clamp(10px,.8vw,13px)] leading-[1.3] text-white/80 max-[680px]:text-[clamp(9px,2.5vw,11px)]">
-                                            {outcome.company}
-                                        </span>
+                                    <div className="absolute inset-x-0 bottom-0 z-[2] p-[clamp(12px,1.15vw,18px)] max-[680px]:p-[11px]">
+                                        <h3 className="m-0 flex min-w-0 items-center gap-[7px] border-b border-white/30 pb-[10px] text-[clamp(14px,1.15vw,20px)] font-bold leading-[1.2] tracking-[-.035em] max-[680px]:gap-[5px] max-[680px]:pb-[7px] max-[680px]:text-[clamp(12px,3.5vw,16px)]">
+                                            <span
+                                                className="h-[10px] w-[10px] flex-none rounded-full bg-[#fff12c] max-[680px]:h-[8px] max-[680px]:w-[8px]"
+                                                aria-hidden="true"
+                                            />
+                                            {outcome.name}
+                                        </h3>
+                                        <div className="flex min-w-0 items-center gap-[9px] pt-[10px] max-[680px]:gap-[7px] max-[680px]:pt-[7px]">
+                                            <span
+                                                className="grid aspect-square w-[clamp(34px,3vw,52px)] flex-none place-items-center overflow-hidden rounded-full border border-white/15 bg-[#f6f6f2] text-center text-[12px] font-extrabold text-[#101010] max-[680px]:w-8 max-[680px]:text-[8px]"
+                                                aria-hidden="true"
+                                            >
+                                                {outcome.mark}
+                                            </span>
+                                            <div className="min-w-0">
+                                                <p className="m-0 break-words text-[clamp(11px,.95vw,15px)] font-semibold leading-[1.3] max-[680px]:text-[clamp(10px,3vw,13px)]">
+                                                    {outcome.role}
+                                                </p>
+                                                <span className="mt-1 block break-words text-[clamp(10px,.8vw,13px)] leading-[1.3] text-white/80 max-[680px]:text-[clamp(9px,2.5vw,11px)]">
+                                                    {outcome.company}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div
+                                    className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[22px] border border-white/15 bg-[#202020] p-[clamp(14px,1.4vw,22px)] text-white [backface-visibility:hidden] [transform:rotateY(180deg)] max-[680px]:rounded-[17px] max-[680px]:p-3"
+                                    aria-hidden="true"
+                                >
+                                    <span className="mb-3 text-[clamp(30px,3vw,44px)] leading-[.7] text-orange-500 max-[680px]:mb-2 max-[680px]:text-[30px]">“</span>
+                                    <p className="m-0 text-[clamp(10px,.78vw,13px)] leading-[1.38] text-white/90 max-[680px]:text-[10px] max-[680px]:leading-[1.3]">
+                                        I joined LIT as a beginner with only one video edit to my name. The hands-on projects helped me build skills, confidence, and character. Overall, LIT was a great experience.
+                                    </p>
                                 </div>
                             </div>
                         </article>
