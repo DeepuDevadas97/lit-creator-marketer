@@ -3,6 +3,7 @@ import AudienceSection from "./components/AudienceSection/AudienceSection";
 import JobGuaranteeSection from "./components/JobGuaranteeSection/JobGuaranteeSection";
 import ChallengesSection from "./components/ChallengesSection/ChallengesSection";
 import ContactSection from "./components/ContactSection/ContactSection";
+import Footer from "./components/Footer/Footer";
 import CreativityAISection from "./components/CreativityAISection/CreativityAISection";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import "./App.css";
@@ -17,22 +18,25 @@ import NextChallengeSection from "./components/NextChallengeSection/NextChalleng
 
 export default function App() {
     return (
-        <main>
-            <SmoothScroll />
-            <HeroSection />
-            <AudienceSection />
-            <JobGuaranteeSection />
-            <ChallengesSection />
-            <CreativityAISection />
-            <Testimonials2 />
-            <RolesSection />
-            <LifeAtLitSection />
-            <ScholarshipsSection />
-            <BrandPromiseSection />
-            <PlacementOutcomesSection />
-            <FaqSection />
-            <NextChallengeSection />
-             <ContactSection />
-        </main>
+        <>
+            <main>
+                <SmoothScroll />
+                <HeroSection />
+                <AudienceSection />
+                <JobGuaranteeSection />
+                <ChallengesSection />
+                <CreativityAISection />
+                <Testimonials2 />
+                <RolesSection />
+                <LifeAtLitSection />
+                <ScholarshipsSection />
+                <BrandPromiseSection />
+                <PlacementOutcomesSection />
+                <FaqSection />
+                <NextChallengeSection />
+                <ContactSection />
+            </main>
+            <Footer />
+        </>
     );
 }
