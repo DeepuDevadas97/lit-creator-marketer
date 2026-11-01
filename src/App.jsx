@@ -12,6 +12,7 @@ import ScholarshipsSection from "./components/ScholarshipsSection/ScholarshipsSe
 import BrandPromiseSection from "./components/BrandPromiseSection/BrandPromiseSection";
 import PlacementOutcomesSection from "./components/PlacementOutcomesSection/PlacementOutcomesSection";
 import FaqSection from "./components/FaqSection/FaqSection";
+import NextChallengeSection from "./components/NextChallengeSection/NextChallengeSection";
 
 export default function App() {
     return (
@@ -29,6 +30,7 @@ export default function App() {
             <BrandPromiseSection />
             <PlacementOutcomesSection />
             <FaqSection />
+            <NextChallengeSection />
         </main>
     );
 }
