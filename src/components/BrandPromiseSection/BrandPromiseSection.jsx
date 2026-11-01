@@ -24,7 +24,12 @@ export default function BrandPromiseSection() {
 
             gsap.fromTo(
                 words,
-                { yPercent: 115, rotateX: -35, opacity: 0, filter: "blur(8px)" },
+                {
+                    yPercent: 115,
+                    rotateX: -35,
+                    opacity: 0,
+                    filter: "blur(8px)",
+                },
                 {
                     yPercent: 0,
                     rotateX: 0,
@@ -47,15 +52,20 @@ export default function BrandPromiseSection() {
 
     const word = (text, italic = false) => (
         <span className="promise-word" key={text}>
-            <span className={`promise-word-inner${italic ? " font-serif font-normal italic" : ""}`}>
+            <span
+                className={`promise-word-inner${italic ? " font-serif font-normal italic" : ""}`}
+            >
                 {text}
             </span>
         </span>
     );
 
     return (
-        <section className="bg-[#0b0c0c] px-[var(--site-page-gutter)] py-6 max-[900px]:px-5">
-            <div ref={sectionRef} className="relative mx-auto flex min-h-[clamp(360px,52vw,720px)] w-full max-w-[var(--site-container-width)] items-end overflow-hidden rounded-[28px] bg-[#080b1c] max-[600px]:min-h-[420px] max-[600px]:rounded-[22px]">
+        <section className="w-full bg-[#0b0c0c] py-6">
+            <div
+                ref={sectionRef}
+                className="relative flex min-h-[clamp(360px,52vw,720px)] w-full items-end overflow-hidden bg-[#080b1c] max-[600px]:min-h-[420px] max-[600px]:rounded-[22px]"
+            >
                 <video
                     className="absolute inset-0 h-full w-full object-cover object-center"
                     src={EventVideo}
@@ -72,10 +82,15 @@ export default function BrandPromiseSection() {
                 />
                 <h2 className="relative z-[1] m-0 max-w-[850px] px-[clamp(28px,4vw,64px)] pb-[clamp(30px,4vw,64px)] text-[clamp(42px,5.2vw,82px)] font-bold leading-[.98] tracking-[-.055em] text-white max-[600px]:text-[clamp(40px,11vw,58px)]">
                     <span className="promise-line">
-                        {word("Not")}{word("just", true)}{word("another", true)}
+                        {word("Not")}
+                        {word("just", true)}
+                        {word("another", true)}
                     </span>
                     <span className="promise-line">
-                        {word("Brick")}{word("in", true)}{word("the", true)}{word("wall", true)}
+                        {word("Brick")}
+                        {word("in", true)}
+                        {word("the", true)}
+                        {word("wall", true)}
                     </span>
                 </h2>
             </div>

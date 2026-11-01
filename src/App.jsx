@@ -10,6 +10,8 @@ import LifeAtLitSection from "./components/LifeAtLitSection/LifeAtLitSection";
 import RolesSection from "./components/RolesSection/RolesSection";
 import ScholarshipsSection from "./components/ScholarshipsSection/ScholarshipsSection";
 import BrandPromiseSection from "./components/BrandPromiseSection/BrandPromiseSection";
+import PlacementOutcomesSection from "./components/PlacementOutcomesSection/PlacementOutcomesSection";
+import FaqSection from "./components/FaqSection/FaqSection";
 
 export default function App() {
     return (
@@ -25,6 +27,8 @@ export default function App() {
             <LifeAtLitSection />
             <ScholarshipsSection />
             <BrandPromiseSection />
+            <PlacementOutcomesSection />
+            <FaqSection />
         </main>
     );
 }
