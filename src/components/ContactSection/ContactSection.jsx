@@ -51,40 +51,77 @@ export default function ContactSection() {
         const context = gsap.context(() => {
             gsap.fromTo(
                 ".contact-info-card",
-                { autoAlpha: 0, y: 48, rotate: -1.5 },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    rotate: 0,
-                    duration: 0.85,
-                    ease: "power3.out",
-                    scrollTrigger: { trigger: ".contact-info-card", start: "top 82%", once: true },
-                },
-            );
-            gsap.fromTo(
-                ".contact-form-card",
-                { autoAlpha: 0, x: 54, y: 24 },
+                { autoAlpha: 0, x: -52, y: 42, rotate: -1.5, filter: "blur(8px)" },
                 {
                     autoAlpha: 1,
                     x: 0,
                     y: 0,
-                    duration: 0.9,
-                    ease: "power3.out",
-                    scrollTrigger: { trigger: ".contact-form-card", start: "top 82%", once: true },
+                    rotate: 0,
+                    filter: "blur(0px)",
+                    duration: 0.95,
+                    ease: "power4.out",
+                    scrollTrigger: { trigger: ".contact-info-card", start: "top 84%", once: true },
                 },
             );
             gsap.fromTo(
-                ".contact-form-field",
-                { autoAlpha: 0, y: 20 },
+                ".contact-art-card",
+                { autoAlpha: 0, y: 58, scale: 0.94, rotate: 1.5 },
                 {
                     autoAlpha: 1,
                     y: 0,
-                    duration: 0.55,
-                    stagger: 0.06,
-                    ease: "power2.out",
-                    scrollTrigger: { trigger: ".contact-form-grid", start: "top 84%", once: true },
+                    scale: 1,
+                    rotate: 0,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: { trigger: ".contact-art-card", start: "top 86%", once: true },
                 },
             );
+            gsap.fromTo(
+                ".contact-form-card",
+                { autoAlpha: 0, x: 58, y: 28, filter: "blur(7px)" },
+                {
+                    autoAlpha: 1,
+                    x: 0,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 0.95,
+                    ease: "power4.out",
+                    scrollTrigger: { trigger: ".contact-form-card", start: "top 84%", once: true },
+                },
+            );
+            gsap.fromTo(
+                ".contact-form-heading",
+                { autoAlpha: 0, y: 22 },
+                {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.65,
+                    ease: "power3.out",
+                    scrollTrigger: { trigger: ".contact-form-heading", start: "top 88%", once: true },
+                },
+            );
+            ScrollTrigger.batch(".contact-form-field", {
+                start: "top 90%",
+                once: true,
+                interval: 0.12,
+                batchMax: 2,
+                onEnter: (fields) => {
+                    gsap.fromTo(
+                        fields,
+                        { autoAlpha: 0, y: 24, filter: "blur(3px)" },
+                        {
+                            autoAlpha: 1,
+                            y: 0,
+                            filter: "blur(0px)",
+                            duration: 0.62,
+                            stagger: 0.1,
+                            ease: "power3.out",
+                            clearProps: "filter,transform",
+                            overwrite: true,
+                        },
+                    );
+                },
+            });
         }, section);
 
         return () => context.revert();
@@ -170,7 +207,7 @@ export default function ContactSection() {
                         </div>
                     </article>
 
-                    <article className="relative flex min-h-[390px] flex-1 flex-col items-center justify-center overflow-hidden rounded-[30px] border border-violet-300/25 bg-[radial-gradient(ellipse_at_68%_18%,#5912c0_0%,#1b0c3a_42%,#090819_100%)] p-8 text-center max-[1050px]:min-h-[330px] max-[700px]:min-h-[270px] max-[700px]:rounded-[24px]">
+                    <article className="contact-art-card relative flex min-h-[390px] flex-1 flex-col items-center justify-center overflow-hidden rounded-[30px] border border-violet-300/25 bg-[radial-gradient(ellipse_at_68%_18%,#5912c0_0%,#1b0c3a_42%,#090819_100%)] p-8 text-center max-[1050px]:min-h-[330px] max-[700px]:min-h-[270px] max-[700px]:rounded-[24px]">
                         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(220,172,255,.2)_1px,transparent_1.5px)] bg-[size:8px_8px] opacity-25" aria-hidden="true" />
                         <div className="absolute left-1/2 top-1/2 h-[42%] w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-[-12deg] rounded-[50%] border border-violet-500/60 shadow-[0_0_30px_rgba(138,50,255,.2)]" aria-hidden="true" />
                         <div className="absolute left-1/2 top-1/2 h-[74%] w-[55%] -translate-x-1/2 -translate-y-1/2 rotate-[-24deg] rounded-[50%] bg-[radial-gradient(ellipse_at_center,transparent_47%,#391087_50%,#8b2fe8_56%,#f2c1ff_60%,#7517d7_65%,#22094f_70%,transparent_74%)] drop-shadow-[0_0_25px_rgba(177,81,255,.5)]" aria-hidden="true" />
@@ -187,7 +224,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="contact-form-card rounded-[30px] border border-white/10 bg-[#090909]/95 p-[clamp(24px,3vw,42px)] shadow-[0_24px_80px_rgba(0,0,0,.28)] max-[700px]:rounded-[24px] max-[700px]:p-5">
-                    <div className="mb-8">
+                    <div className="contact-form-heading mb-8">
                         <h3 className="m-0 text-[clamp(25px,2vw,34px)] font-semibold leading-tight tracking-[-.04em]">Want to know more?</h3>
                         <p className="mt-2 font-serif text-[clamp(18px,1.5vw,24px)] italic text-white/90">Fill the form to schedule a call</p>
                     </div>
