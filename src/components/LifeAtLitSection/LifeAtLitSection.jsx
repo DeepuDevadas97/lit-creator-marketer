@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import "./LifeAtLitSection.css";
-import EventVideo from "../../assets/videos/event-video1.mp4"
+import EventVideo from "../../assets/videos/event-video1.mp4";
 
 const LIGHT = "#0b0c0c";
 const DARK = "#0b0c0c";
@@ -130,7 +130,10 @@ export default function LifeAtLitSection() {
             return undefined;
         }
 
-        pinnedMedia.querySelector('[data-role="pinned-video"]')?.play().catch(() => {});
+        pinnedMedia
+            .querySelector('[data-role="pinned-video"]')
+            ?.play()
+            .catch(() => {});
 
         function interpolateColor(color1, color2, factor) {
             return gsap.utils.interpolate(color1, color2, factor);
@@ -166,13 +169,19 @@ export default function LifeAtLitSection() {
             const centerY = rect.top + rect.height / 2;
 
             pinnedMarqueeImgClone = pinnedMedia.cloneNode(true);
-            pinnedVideoElement = pinnedMedia.querySelector('[data-role="pinned-video"]');
-            const clonedVideo = pinnedMarqueeImgClone.querySelector('[data-role="pinned-video"]');
+            pinnedVideoElement = pinnedMedia.querySelector(
+                '[data-role="pinned-video"]',
+            );
+            const clonedVideo = pinnedMarqueeImgClone.querySelector(
+                '[data-role="pinned-video"]',
+            );
 
             // Move the live video node into the FLIP layer so playback continues
             // through the expansion instead of restarting from its poster.
             if (pinnedVideoElement && clonedVideo) {
-                pinnedVideoPlaceholder = document.createComment("pinned-video-placeholder");
+                pinnedVideoPlaceholder = document.createComment(
+                    "pinned-video-placeholder",
+                );
                 pinnedVideoElement.replaceWith(pinnedVideoPlaceholder);
                 clonedVideo.replaceWith(pinnedVideoElement);
             }
@@ -476,17 +485,36 @@ export default function LifeAtLitSection() {
                         ref={horizontalScrollWrapperRef}
                         className="life-stories-track relative w-[300%] h-[100svh] flex will-change-transform max-[1199px]:w-full max-[1199px]:h-auto max-[1199px]:flex-col"
                     >
-                        <div className="life-stories-spacer flex-none w-1/3 h-full max-[1199px]:hidden" aria-hidden="true" />
+                        <div
+                            className="life-stories-spacer flex-none w-1/3 h-full max-[1199px]:hidden"
+                            aria-hidden="true"
+                        />
 
                         {STORY_PAGES.map((stories, pageIndex) => (
-                            <div className={`life-stories-page flex-none w-1/3 h-full max-[1199px]:w-full max-[1199px]:h-auto ${pageIndex === 0 ? "life-stories-page-first" : ""}`} key={`story-page-${pageIndex}`}>
+                            <div
+                                className={`life-stories-page flex-none w-1/3 h-full max-[1199px]:w-full max-[1199px]:h-auto ${pageIndex === 0 ? "life-stories-page-first" : ""}`}
+                                key={`story-page-${pageIndex}`}
+                            >
                                 <div className="life-stories-grid">
                                     {stories.map((story) => (
-                                        <article className="life-story-card" key={story.title}>
-                                            <img className="life-story-image" src={story.image} alt={story.alt} loading="lazy" />
+                                        <article
+                                            className="life-story-card"
+                                            key={story.title}
+                                        >
+                                            <img
+                                                className="life-story-image"
+                                                src={story.image}
+                                                alt={story.alt}
+                                                loading="lazy"
+                                            />
                                             <div className="life-story-copy">
-                                                <span className="life-story-accent" aria-hidden="true" />
-                                                <span className="life-story-category">{story.category}</span>
+                                                <span
+                                                    className="life-story-accent"
+                                                    aria-hidden="true"
+                                                />
+                                                <span className="life-story-category">
+                                                    {story.category}
+                                                </span>
                                                 <h3>{story.title}</h3>
                                                 <p>{story.body}</p>
                                             </div>

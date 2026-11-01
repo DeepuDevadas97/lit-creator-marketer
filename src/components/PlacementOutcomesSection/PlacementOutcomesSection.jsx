@@ -232,9 +232,15 @@ export default function PlacementOutcomesSection() {
                                     className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[22px] border border-white/15 bg-[#202020] p-[clamp(14px,1.4vw,22px)] text-white [backface-visibility:hidden] [transform:rotateY(180deg)] max-[680px]:rounded-[17px] max-[680px]:p-3"
                                     aria-hidden="true"
                                 >
-                                    <span className="mb-3 text-[clamp(30px,3vw,44px)] leading-[.7] text-orange-500 max-[680px]:mb-2 max-[680px]:text-[30px]">“</span>
+                                    <span className="mb-3 text-[clamp(30px,3vw,44px)] leading-[.7] text-orange-500 max-[680px]:mb-2 max-[680px]:text-[30px]">
+                                        “
+                                    </span>
                                     <p className="m-0 text-[clamp(10px,.78vw,13px)] leading-[1.38] text-white/90 max-[680px]:text-[10px] max-[680px]:leading-[1.3]">
-                                        I joined LIT as a beginner with only one video edit to my name. The hands-on projects helped me build skills, confidence, and character. Overall, LIT was a great experience.
+                                        I joined LIT as a beginner with only one
+                                        video edit to my name. The hands-on
+                                        projects helped me build skills,
+                                        confidence, and character. Overall, LIT
+                                        was a great experience.
                                     </p>
                                 </div>
                             </div>

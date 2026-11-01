@@ -24,7 +24,8 @@ export default function NextChallengeSection() {
                 text,
                 { x: 0 },
                 {
-                    x: () => -Math.max(0, text.scrollWidth - section.clientWidth),
+                    x: () =>
+                        -Math.max(0, text.scrollWidth - section.clientWidth),
                     ease: "none",
                     scrollTrigger: {
                         trigger: section,
@@ -45,12 +46,12 @@ export default function NextChallengeSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative flex h-[100vh] min-h-[100vh] items-center overflow-hidden bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] py-20 text-white max-[600px]:py-16"
+            className="relative flex md:h-[100vh] md:min-h-[100vh] items-center overflow-hidden bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] py-20 text-white max-[600px]:py-16 max-md:hidden"
             aria-label="So, you are ready for the next challenge?"
         >
             <p
                 ref={textRef}
-                className="m-0 w-max shrink-0 whitespace-nowrap px-[2.5vw] text-[clamp(64px,13.5vw,250px)] font-bold leading-[.9] tracking-[-.07em] motion-reduce:w-full motion-reduce:shrink motion-reduce:whitespace-normal motion-reduce:px-5 motion-reduce:text-center max-[600px]:text-[clamp(52px,13vw,88px)]"
+                className="m-0 w-max shrink-0 whitespace-nowrap px-[2.5vw] text-[clamp(64px,13.5vw,250px)] font-bold leading-[.9] tracking-[-.07em] motion-reduce:w-full motion-reduce:shrink motion-reduce:whitespace-normal motion-reduce:px-5 motion-reduce:text-center max-[600px]:text-[28px]"
                 aria-hidden="true"
             >
                 So, you are ready for the next challenge?

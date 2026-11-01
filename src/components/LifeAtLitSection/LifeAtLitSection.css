@@ -1,195 +1,264 @@
 .life-stories-stage {
-  position: relative;
-  background-color: #0b0c0c;
-  background-image:
-    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-  background-size: 32px 32px;
+    position: relative;
+    background-color: #0b0c0c;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
 }
 
 .life-stories-heading {
-  position: absolute;
-  z-index: 10;
-  top: clamp(18px, 3vh, 34px);
-  left: 0;
-  width: 100%;
-  margin: 0;
-  color: #f8f8f8;
-  text-align: center;
-  font-size: clamp(40px, 4vw, 72px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -.055em;
-  pointer-events: none;
+    position: absolute;
+    z-index: 10;
+    top: clamp(18px, 3vh, 34px);
+    left: 0;
+    width: 100%;
+    margin: 0;
+    color: #f8f8f8;
+    text-align: center;
+    font-size: clamp(40px, 4vw, 72px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    pointer-events: none;
 }
 
 .life-stories-heading em {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 400;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
 }
 
 .life-stories-grid {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 8vh 24px 30px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 8vh 24px 30px;
 }
 
 .life-stories-page-first .life-stories-grid {
-  padding-left: 40px;
+    padding-left: 40px;
 }
 
 .life-story-card {
-  display: flex;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-  align-items: stretch;
-  border: 1px solid rgba(255,255,255,.055);
-  border-radius: 28px;
-  background: rgba(8,8,8,.94);
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    align-items: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 28px;
+    background: rgba(8, 8, 8, 0.94);
 }
 
 .life-story-image {
-  display: block;
-  width: 36%;
-  min-width: 0;
-  flex: none;
-  object-fit: cover;
+    display: block;
+    width: 36%;
+    min-width: 0;
+    flex: none;
+    object-fit: cover;
 }
 
 .life-story-copy {
-  display: flex;
-  min-width: 0;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(14px, 1.4vw, 24px);
-  color: #f7f7f7;
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(14px, 1.4vw, 24px);
+    color: #f7f7f7;
 }
 
 .life-story-accent {
-  display: block;
-  width: 56px;
-  height: 7px;
-  flex: none;
-  margin-bottom: 14px;
-  border-radius: 999px;
-  background: #fff12c;
+    display: block;
+    width: 56px;
+    height: 7px;
+    flex: none;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: #fff12c;
 }
 
 .life-story-category {
-  color: #fff12c;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  line-height: 1.2;
+    color: #fff12c;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
 }
 
 .life-story-copy h3 {
-  margin: 8px 0 0;
-  font-size: clamp(20px, 1.35vw, 25px);
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -.04em;
+    margin: 8px 0 0;
+    font-size: clamp(20px, 1.35vw, 25px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
 }
 
 .life-story-copy p {
-  margin: 12px 0 0;
-  color: rgba(255,255,255,.74);
-  font-size: clamp(15px, 1vw, 18px);
-  line-height: 1.42;
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: clamp(15px, 1vw, 18px);
+    line-height: 1.42;
 }
 
 @media (max-width: 1199px) {
-  .life-marquee {
-    height: auto;
-    min-height: 0;
-    padding: 0 0 16px;
-  }
-  .life-stories-heading {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    padding: 24px 18px 12px;
-    font-size: clamp(38px, 6vw, 58px);
-  }
-  .life-marquee-frame {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    translate: none !important;
-    transform: none !important;
-    rotate: none !important;
-    padding: 0 24px;
-  }
-  .life-marquee-images {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    translate: none !important;
-    transform: none !important;
-    display: flex !important;
-    justify-content: flex-start !important;
-    align-items: stretch !important;
-    gap: 14px !important;
-    overflow-x: auto;
-    padding: 8px 0 14px;
-    scrollbar-width: none;
-    touch-action: pan-x;
-  }
-  .life-marquee-images::-webkit-scrollbar { display: none; }
-  .life-marquee-item {
-    width: min(42vw, 380px) !important;
-    height: auto !important;
-    flex: 0 0 min(42vw, 380px) !important;
-    aspect-ratio: 3 / 2;
-    border-radius: 18px;
-  }
-  .life-stories-stage { height: auto; overflow: visible; }
-  .life-stories-track { width: 100%; height: auto; flex-direction: column; transform: none !important; }
-  .life-stories-spacer { display: none; }
-  .life-stories-page { width: 100%; height: auto; }
-  .life-stories-grid {
-    height: auto;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: none;
-    gap: 16px;
-    padding: 20px 24px 32px;
-  }
-  .life-stories-page-first .life-stories-grid { padding-left: 24px; }
-  .life-story-card { min-height: 260px; flex-direction: row; border-radius: 22px; }
-  .life-story-image { width: 36%; height: auto; min-height: 260px; }
-  .life-story-copy { padding: clamp(18px, 3vw, 28px); }
-  .life-story-accent { width: 48px; height: 6px; margin-bottom: 14px; }
-  .life-story-category { font-size: 11px; }
-  .life-story-copy h3 { font-size: clamp(21px, 2.7vw, 28px); }
-  .life-story-copy p { margin-top: 12px; font-size: clamp(15px, 1.6vw, 17px); line-height: 1.5; }
+    .life-marquee {
+        height: auto;
+        min-height: 0;
+        padding: 0 0 16px;
+    }
+    .life-stories-heading {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 24px 18px 12px;
+        font-size: clamp(38px, 6vw, 58px);
+    }
+    .life-marquee-frame {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        translate: none !important;
+        transform: none !important;
+        rotate: none !important;
+        padding: 0 24px;
+    }
+    .life-marquee-images {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        translate: none !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+        overflow-x: auto;
+        padding: 8px 0 14px;
+        scrollbar-width: none;
+        touch-action: pan-x;
+    }
+    .life-marquee-images::-webkit-scrollbar {
+        display: none;
+    }
+    .life-marquee-item {
+        width: min(42vw, 380px) !important;
+        height: auto !important;
+        flex: 0 0 min(42vw, 380px) !important;
+        aspect-ratio: 3 / 2;
+        border-radius: 18px;
+    }
+    .life-stories-stage {
+        height: auto;
+        overflow: visible;
+    }
+    .life-stories-track {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        transform: none !important;
+    }
+    .life-stories-spacer {
+        display: none;
+    }
+    .life-stories-page {
+        width: 100%;
+        height: auto;
+    }
+    .life-stories-grid {
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+        gap: 16px;
+        padding: 20px 24px 32px;
+    }
+    .life-stories-page-first .life-stories-grid {
+        padding-left: 24px;
+    }
+    .life-story-card {
+        min-height: 260px;
+        flex-direction: row;
+        border-radius: 22px;
+    }
+    .life-story-image {
+        width: 36%;
+        height: auto;
+        min-height: 260px;
+    }
+    .life-story-copy {
+        padding: clamp(18px, 3vw, 28px);
+    }
+    .life-story-accent {
+        width: 48px;
+        height: 6px;
+        margin-bottom: 14px;
+    }
+    .life-story-category {
+        font-size: 11px;
+    }
+    .life-story-copy h3 {
+        font-size: clamp(21px, 2.7vw, 28px);
+    }
+    .life-story-copy p {
+        margin-top: 12px;
+        font-size: clamp(15px, 1.6vw, 17px);
+        line-height: 1.5;
+    }
 }
 
 @media (max-width: 768px) {
-  .life-stories-heading { padding: 20px 14px 10px; font-size: clamp(36px, 9vw, 48px); }
-  .life-marquee-frame { padding: 0 16px; }
-  .life-marquee-images { gap: 12px !important; }
-  .life-marquee-item {
-    width: min(78vw, 300px) !important;
-    flex-basis: min(78vw, 300px) !important;
-    border-radius: 16px;
-  }
-  .life-stories-grid { gap: 14px; padding: 0 16px 28px; }
-  .life-stories-page-first .life-stories-grid { padding: 0 16px 28px; }
-  .life-story-card { min-height: 0; flex-direction: column; border-radius: 20px; }
-  .life-story-image { width: 100%; height: clamp(160px, 48vw, 210px); min-height: 0; }
-  .life-story-copy { padding: 20px; }
-  .life-story-accent { margin-bottom: 14px; }
-  .life-story-copy h3 { font-size: clamp(20px, 5.2vw, 24px); }
-  .life-story-copy p { margin-top: 12px; font-size: 15px; line-height: 1.5; }
+    .life-stories-heading {
+        padding: 20px 14px 10px;
+        font-size: clamp(36px, 9vw, 48px);
+    }
+    .life-marquee-frame {
+        padding: 0 16px;
+    }
+    .life-marquee-images {
+        gap: 12px !important;
+    }
+    .life-marquee-item {
+        width: min(78vw, 300px) !important;
+        flex-basis: min(78vw, 300px) !important;
+        border-radius: 16px;
+    }
+    .life-stories-grid {
+        gap: 14px;
+        padding: 0 16px 28px;
+    }
+    .life-stories-page-first .life-stories-grid {
+        padding: 0 16px 28px;
+    }
+    .life-story-card {
+        min-height: 0;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    .life-story-image {
+        width: 100%;
+        height: clamp(160px, 48vw, 210px);
+        min-height: 0;
+    }
+    .life-story-copy {
+        padding: 20px;
+    }
+    .life-story-accent {
+        margin-bottom: 14px;
+    }
+    .life-story-copy h3 {
+        font-size: clamp(20px, 5.2vw, 24px);
+    }
+    .life-story-copy p {
+        margin-top: 12px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
 }

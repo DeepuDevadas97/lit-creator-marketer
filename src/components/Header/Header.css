@@ -1,1 +1,84 @@
-.brand-symbol{position:relative;display:flex;width:27px;height:31px;align-items:flex-end;gap:3px}.brand-symbol i{display:block;width:5px;background:#f8f8f3}.brand-symbol i:nth-child(1){height:16px}.brand-symbol i:nth-child(2){height:24px}.brand-symbol i:nth-child(3){height:31px;background:#f4d92e}.brand-symbol i:nth-child(4){height:22px;background:#2de99b}.brand-symbol i:nth-child(5){height:28px;background:#586bff}.brand-symbol:before{position:absolute;top:0;left:6px;width:7px;height:4px;background:#ff6a46;content:""}.brand-word span{color:#2de99b}.program-grid{display:grid;grid-template-columns:repeat(2,8px);gap:2px}.program-grid i{width:8px;height:8px;border-radius:2px;background:#2de99b}.program-grid i:nth-child(2){opacity:.6}.program-grid i:nth-child(3){opacity:.8}.chevron{margin-left:5px;font-size:16px;line-height:0}.button-gradient{background:linear-gradient(110deg,#394aff 2%,#4a20e8 47%,#00d4aa 100%);transition:transform .2s,filter .2s}.button-gradient:hover{transform:translateY(-2px);filter:brightness(1.12)}.nav-cta span{font-size:18px;line-height:0}.menu-toggle span{width:15px;height:1px;background:#fff}
+.brand-symbol {
+    position: relative;
+    display: flex;
+    width: 27px;
+    height: 31px;
+    align-items: flex-end;
+    gap: 3px;
+}
+.brand-symbol i {
+    display: block;
+    width: 5px;
+    background: #f8f8f3;
+}
+.brand-symbol i:nth-child(1) {
+    height: 16px;
+}
+.brand-symbol i:nth-child(2) {
+    height: 24px;
+}
+.brand-symbol i:nth-child(3) {
+    height: 31px;
+    background: #f4d92e;
+}
+.brand-symbol i:nth-child(4) {
+    height: 22px;
+    background: #2de99b;
+}
+.brand-symbol i:nth-child(5) {
+    height: 28px;
+    background: #586bff;
+}
+.brand-symbol:before {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 7px;
+    height: 4px;
+    background: #ff6a46;
+    content: "";
+}
+.brand-word span {
+    color: #2de99b;
+}
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 8px);
+    gap: 2px;
+}
+.program-grid i {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: #2de99b;
+}
+.program-grid i:nth-child(2) {
+    opacity: 0.6;
+}
+.program-grid i:nth-child(3) {
+    opacity: 0.8;
+}
+.chevron {
+    margin-left: 5px;
+    font-size: 16px;
+    line-height: 0;
+}
+.button-gradient {
+    background: linear-gradient(110deg, #394aff 2%, #4a20e8 47%, #00d4aa 100%);
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+}
+.button-gradient:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+}
+.nav-cta span {
+    font-size: 18px;
+    line-height: 0;
+}
+.menu-toggle span {
+    width: 15px;
+    height: 1px;
+    background: #fff;
+}

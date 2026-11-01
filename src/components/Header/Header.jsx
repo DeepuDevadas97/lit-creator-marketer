@@ -55,7 +55,7 @@ export default function Header() {
                 href="#top"
                 aria-label="LIT home"
             >
-                <img src={LitLogo} alt="LIT" className="w-10" />
+                <img src={LitLogo} alt="LIT" className="w-7 sm:w-10" />
             </a>
             <button
                 className="menu-toggle hidden size-[42px] shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border border-white/20 bg-transparent max-[900px]:flex"

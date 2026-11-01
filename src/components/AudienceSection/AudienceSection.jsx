@@ -133,20 +133,35 @@ export default function AudienceSection() {
                                 className={`audience-card audience-card-${index + 1} audience-card-${audience.color}`}
                                 key={audience.title}
                             >
-                                <div className={`audience-image audience-image-${audience.color}`}>
+                                <div
+                                    className={`audience-image audience-image-${audience.color}`}
+                                >
                                     <img
                                         src={audience.image}
                                         alt={audience.alt}
                                         loading="lazy"
                                     />
                                     <div className="audience-image-caption">
-                                        <span className="audience-arrow" aria-hidden="true">↗</span>
+                                        <span
+                                            className="audience-arrow"
+                                            aria-hidden="true"
+                                        >
+                                            ↗
+                                        </span>
                                         <h3>{audience.title}</h3>
                                     </div>
                                 </div>
                                 <div className="audience-copy">
-                                    {audience.intro && <p className="audience-intro">{audience.intro}</p>}
-                                    {audience.description && <p className="audience-description">{audience.description}</p>}
+                                    {audience.intro && (
+                                        <p className="audience-intro">
+                                            {audience.intro}
+                                        </p>
+                                    )}
+                                    {audience.description && (
+                                        <p className="audience-description">
+                                            {audience.description}
+                                        </p>
+                                    )}
                                 </div>
                             </article>
                         );

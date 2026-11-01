@@ -100,7 +100,12 @@ export default function FaqSection() {
                 onEnter: (items) => {
                     gsap.fromTo(
                         items,
-                        { autoAlpha: 0, y: 34, scale: 0.985, filter: "blur(4px)" },
+                        {
+                            autoAlpha: 0,
+                            y: 34,
+                            scale: 0.985,
+                            filter: "blur(4px)",
+                        },
                         {
                             autoAlpha: 1,
                             y: 0,
