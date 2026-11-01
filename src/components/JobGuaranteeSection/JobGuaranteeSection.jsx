@@ -183,7 +183,7 @@ export default function JobGuaranteeSection() {
                     </a>
                 </div>
 
-                <article className="guarantee-column engine-card overflow-hidden rounded-[30px] border border-white/15 bg-[#080808] p-3">
+                <article className="guarantee-column engine-card overflow-hidden rounded-[30px] border border-white/15 bg-[#080808] p-3 max-[1050px]:col-span-2 max-[680px]:col-span-1">
                     <div className="px-4 pt-8">
                         <h3 className="m-0 text-[clamp(25px,2vw,36px)] font-medium tracking-[-.06em]">
                             The LIT{" "}

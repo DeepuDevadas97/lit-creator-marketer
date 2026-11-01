@@ -46,7 +46,7 @@ export default function NextChallengeSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative flex md:h-[100vh] md:min-h-[100vh] items-center overflow-hidden bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] py-20 text-white max-[600px]:py-16 max-md:hidden"
+            className="relative flex xl:h-[100vh] xl:min-h-[100vh] items-center overflow-hidden bg-[#0b0c0c] bg-[linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] bg-[size:32px_32px] py-20 text-white max-[600px]:py-16 max-xl:hidden"
             aria-label="So, you are ready for the next challenge?"
         >
             <p
