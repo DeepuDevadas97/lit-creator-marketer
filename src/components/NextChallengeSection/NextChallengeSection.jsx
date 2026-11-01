@@ -22,15 +22,15 @@ export default function NextChallengeSection() {
         const context = gsap.context(() => {
             gsap.fromTo(
                 text,
-                { x: () => section.clientWidth },
+                { x: 0 },
                 {
-                    x: () => -text.scrollWidth,
+                    x: () => -Math.max(0, text.scrollWidth - section.clientWidth),
                     ease: "none",
                     scrollTrigger: {
                         trigger: section,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: 1.2,
+                        start: "top center",
+                        end: "bottom center",
+                        scrub: 0.7,
                         invalidateOnRefresh: true,
                         refreshPriority: 1,
                     },
