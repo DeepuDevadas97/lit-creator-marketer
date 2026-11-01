@@ -15,10 +15,12 @@ import BrandPromiseSection from "./components/BrandPromiseSection/BrandPromiseSe
 import PlacementOutcomesSection from "./components/PlacementOutcomesSection/PlacementOutcomesSection";
 import FaqSection from "./components/FaqSection/FaqSection";
 import NextChallengeSection from "./components/NextChallengeSection/NextChallengeSection";
+import Header from "./components/Header/Header";
 
 export default function App() {
     return (
         <>
+            <Header />
             <main>
                 <SmoothScroll />
                 <HeroSection />

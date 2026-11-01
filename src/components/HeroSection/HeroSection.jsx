@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Header from "../Header/Header";
 import "./HeroSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,14 +26,16 @@ export default function HeroSection() {
         const ctx = gsap.context(() => {
             const number = loader.current.querySelector(".loader-count");
             const ring = loader.current.querySelector(".loader-ring-progress");
+            const siteHeader = document.querySelector(".site-header");
 
             if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 gsap.set(loader.current, { display: "none" });
                 gsap.set(landing.current, { marginTop: 0 });
+                if (siteHeader) gsap.set(siteHeader, { autoAlpha: 1, y: 0 });
                 return;
             }
 
-            gsap.set(".site-header", { autoAlpha: 0, y: -24 });
+            if (siteHeader) gsap.set(siteHeader, { autoAlpha: 0, y: -24, zIndex: 0 });
             gsap.set(
                 ".hero-copy > :not(h1), .applications-pill, .play-button, .visual-caption > *, .visual-index",
                 { autoAlpha: 0, y: 24 },
@@ -47,9 +48,18 @@ export default function HeroSection() {
             });
             gsap.set(".visual-photo", { scale: 1.08 });
 
+            ScrollTrigger.create({
+                trigger: ".hero-shell",
+                start: "top top",
+                end: "bottom top",
+                onLeave: () => siteHeader && gsap.set(siteHeader, { autoAlpha: 0, y: -24 }),
+                onEnterBack: () => siteHeader && gsap.set(siteHeader, { autoAlpha: 1, y: 0, zIndex: 1000 }),
+                onLeaveBack: () => siteHeader && gsap.set(siteHeader, { autoAlpha: 0, y: -24, zIndex: 0 }),
+            });
+
             const reveal = gsap
                 .timeline({ paused: true, defaults: { ease: "power3.out" } })
-                .to(".site-header", { autoAlpha: 1, y: 0, duration: 0.7 }, 0)
+                .to(siteHeader, { autoAlpha: 1, y: 0, duration: 0.7 }, 0)
                 .to(".eyebrow", { autoAlpha: 1, y: 0, duration: 0.55 }, 0.08)
                 .to(
                     ".hero-description, .hero-tags, .hero-cta, .diploma-note, .partner-strip",
@@ -150,6 +160,7 @@ export default function HeroSection() {
                     1.35,
                 )
                 .add(reveal, 1.4);
+            if (siteHeader) scrollAnimation.set(siteHeader, { zIndex: 1000 }, 2.2);
             reveal.paused(false);
 
             gsap.to(".visual-photo", {
@@ -222,7 +233,7 @@ export default function HeroSection() {
                 className="landing-screen min-h-[100svh] scroll-mt-0"
                 ref={landing}
             >
-                <Header />
+                <div className="h-[84px] max-[900px]:h-[72px]" aria-hidden="true" />
                 <section
                     className="hero-shell relative min-h-[calc(100svh-84px)] overflow-hidden bg-[#0b0c0c] px-[var(--site-page-gutter)] pb-[30px] pt-[clamp(58px,7vw,108px)] max-[900px]:min-h-[calc(100svh-72px)] max-[900px]:pt-[55px] max-[900px]:px-5 max-[540px]:pt-[42px]"
                     id="top"

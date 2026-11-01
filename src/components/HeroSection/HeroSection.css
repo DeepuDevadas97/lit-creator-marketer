@@ -495,7 +495,7 @@
     position: relative;
 }
 .loader-kicker {
-    font-size: 9px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #a7aaa6;
@@ -521,7 +521,7 @@
     color: #36e99c;
 }
 .loader-word {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.23em;
     color: #a6a8a2;
     margin: 16px 0 31px;
@@ -563,7 +563,7 @@
 }
 .loader-prompt {
     margin-top: 24px;
-    font-size: 10px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.17em;
     color: #c6c8c4;
@@ -572,8 +572,8 @@
     gap: 10px;
 }
 .scroll-mouse {
-    width: 14px;
-    height: 21px;
+    width: 20px;
+    height: 30px;
     border: 1px solid #36e99c;
     border-radius: 10px;
     position: relative;
@@ -583,8 +583,8 @@
     position: absolute;
     width: 2px;
     height: 4px;
-    top: 4px;
-    left: 5px;
+    top: 8px;
+    left: 8px;
     background: #36e99c;
     border-radius: 2px;
     animation: mouse-scroll 1.2s ease-in-out infinite;

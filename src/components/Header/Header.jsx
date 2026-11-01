@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Header.css";
-import LitLogo from '../../assets/images/lit20logo.avif'
+import LitLogo from "../../assets/images/lit20logo.avif";
 
 const links = ["Why LIT", "Placements", "Stories", "About"];
 const programs = [
@@ -33,7 +33,8 @@ export default function Header() {
         if (!programsOpen) return undefined;
 
         const closeOnOutsideClick = (event) => {
-            if (!programsRef.current?.contains(event.target)) setProgramsOpen(false);
+            if (!programsRef.current?.contains(event.target))
+                setProgramsOpen(false);
         };
         const closeOnEscape = (event) => {
             if (event.key === "Escape") setProgramsOpen(false);
@@ -48,13 +49,13 @@ export default function Header() {
     }, [programsOpen]);
 
     return (
-        <header className="site-header sticky top-0 z-[50] flex h-[84px] items-center gap-[clamp(35px,5vw,92px)] border-b border-white/10 bg-[#0b0c0c]/95 px-[var(--site-page-gutter)] backdrop-blur-[16px] max-[900px]:h-[72px] max-[900px]:justify-between">
+        <header className="site-header fixed inset-x-0 top-0 z-[1000] flex h-[84px] items-center gap-[clamp(35px,5vw,92px)] border-b border-white/10 bg-[#0b0c0c] px-[var(--site-page-gutter)] max-[900px]:h-[72px] max-[900px]:justify-between">
             <a
                 className="brand-mark flex shrink-0 items-center gap-[10px] text-[#f7f7f2] no-underline"
                 href="#top"
                 aria-label="LIT home"
             >
-                <img src={LitLogo} alt="LIT" className="w-10"/>
+                <img src={LitLogo} alt="LIT" className="w-10" />
             </a>
             <button
                 className="menu-toggle hidden size-[42px] shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border border-white/20 bg-transparent max-[900px]:flex"
@@ -82,7 +83,10 @@ export default function Header() {
                     ))}
                 </div>
                 <div className="nav-actions flex items-center gap-[9px] max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-[10px] max-[900px]:pt-[18px]">
-                    <div className="relative max-[900px]:w-full" ref={programsRef}>
+                    <div
+                        className="relative max-[900px]:w-full"
+                        ref={programsRef}
+                    >
                         <button
                             className={`nav-program flex h-[42px] items-center justify-center gap-3 rounded-full border px-[18px] text-[15px] uppercase font-bold tracking-[.02em] text-white transition-colors max-[900px]:h-[42px] cursor-pointer max-[900px]:w-full max-[900px]:justify-center ${programsOpen ? "border-white/20 bg-white/[.04]" : "border-white/10 bg-transparent hover:border-white/20 hover:bg-white/[.035]"}`}
                             type="button"
@@ -91,10 +95,18 @@ export default function Header() {
                             onClick={() => setProgramsOpen((open) => !open)}
                         >
                             <span className="program-grid" aria-hidden="true">
-                                <i /><i /><i /><i />
+                                <i />
+                                <i />
+                                <i />
+                                <i />
                             </span>
                             Programs
-                            <span className={`ml-1 text-[16px] leading-none transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`} aria-hidden="true">⌃</span>
+                            <span
+                                className={`ml-1 text-[16px] leading-none transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`}
+                                aria-hidden="true"
+                            >
+                                ⌃
+                            </span>
                         </button>
                         {programsOpen && (
                             <div
@@ -113,16 +125,33 @@ export default function Header() {
                                             setMenuOpen(false);
                                         }}
                                     >
-                                        <img className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" src={program.image} alt="" aria-hidden="true" />
-                                        <span className={`absolute inset-0 bg-gradient-to-b ${program.color} via-black/10 to-black/95`} aria-hidden="true" />
+                                        <img
+                                            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                                            src={program.image}
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                        <span
+                                            className={`absolute inset-0 bg-gradient-to-b ${program.color} via-black/10 to-black/95`}
+                                            aria-hidden="true"
+                                        />
                                         <span className="relative z-[1] w-fit rounded-[12px] bg-white/85 px-3 py-2 text-xs font-extrabold text-[#15121a] backdrop-blur max-[900px]:self-start">
                                             {program.duration}
                                         </span>
                                         <span className="relative z-[1]">
-                                            <span className="block text-[clamp(18px,1.45vw,24px)] font-bold leading-tight tracking-[-.04em]">{program.title}</span>
-                                            <span className="mt-0.5 block font-serif text-[21px] italic leading-tight text-white/90">Program</span>
+                                            <span className="block text-[clamp(18px,1.45vw,24px)] font-bold leading-tight tracking-[-.04em]">
+                                                {program.title}
+                                            </span>
+                                            <span className="mt-0.5 block font-serif text-[21px] italic leading-tight text-white/90">
+                                                Program
+                                            </span>
                                         </span>
-                                        <span className="absolute right-3 top-3 z-[1] grid h-10 w-10 place-items-center rounded-full border border-black/50 bg-white/50 text-xl text-white shadow-sm backdrop-blur transition group-hover:rotate-45 group-hover:bg-white/70 max-[900px]:hidden" aria-hidden="true">↗</span>
+                                        <span
+                                            className="absolute right-3 top-3 z-[1] grid h-10 w-10 place-items-center rounded-full border border-black/50 bg-white/50 text-xl text-white shadow-sm backdrop-blur transition group-hover:rotate-45 group-hover:bg-white/70 max-[900px]:hidden"
+                                            aria-hidden="true"
+                                        >
+                                            ↗
+                                        </span>
                                     </a>
                                 ))}
                             </div>
