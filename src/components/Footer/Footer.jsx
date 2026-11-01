@@ -155,14 +155,14 @@ export default function Footer() {
                     className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 px-4 py-7 text-[clamp(13px,1vw,16px)] text-white/85 max-[700px]:flex-col max-[700px]:items-start max-[700px]:px-1 max-[700px]:py-6"
                     aria-label="Footer navigation"
                 >
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
                         {[
                             "Next Gen Business",
                             "CreatorPreneur",
                             "Creator Marketer",
                         ].map((label, index) => (
                             <span
-                                className="footer-fade-up inline-flex items-center gap-3"
+                                className="footer-fade-up inline-flex items-center gap-2"
                                 key={label}
                             >
                                 {index > 0 && (
@@ -182,10 +182,10 @@ export default function Footer() {
                             </span>
                         ))}
                     </div>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
                         {footerLinks.map(([label, href], index) => (
                             <span
-                                className="footer-fade-up inline-flex items-center gap-3"
+                                className="footer-fade-up inline-flex items-center gap-2"
                                 key={label}
                             >
                                 {index > 0 && (
