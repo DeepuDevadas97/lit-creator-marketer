@@ -68,7 +68,7 @@ export default function Header() {
                 <span />
             </button>
             <nav
-                className={`header-nav hidden flex-1 items-center justify-between gap-5 min-[901px]:flex ${menuOpen ? "max-[900px]:absolute max-[900px]:left-0 max-[900px]:right-0 max-[900px]:top-[72px] max-[900px]:z-10 max-[900px]:flex max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:border-b max-[900px]:border-white/10 max-[900px]:bg-[#0c0d0d] max-[900px]:px-[var(--site-page-gutter)] max-[900px]:pb-7 max-[900px]:pt-6" : ""}`}
+                className={`header-nav flex-1 items-center justify-between gap-5 min-[901px]:flex ${menuOpen ? "is-open" : ""}`}
                 aria-label="Main navigation"
             >
                 <div className="nav-links flex items-center gap-[clamp(18px,2.4vw,38px)] max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-0">
