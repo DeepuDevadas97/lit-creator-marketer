@@ -54,9 +54,7 @@ const questions = [
 
 export default function FaqSection() {
     const sectionRef = useRef(null);
-    const [openQuestions, setOpenQuestions] = useState(
-        () => new Set([0, 1, 10]),
-    );
+    const [openQuestion, setOpenQuestion] = useState(0);
 
     useLayoutEffect(() => {
         const section = sectionRef.current;
@@ -94,34 +92,28 @@ export default function FaqSection() {
                 },
             );
 
-            gsap.utils.toArray(".faq-item").forEach((item, index) => {
-                const fromLeft = index % 2 === 0;
-
-                gsap.fromTo(
-                    item,
-                    {
-                        autoAlpha: 0,
-                        x: fromLeft ? -42 : 42,
-                        y: 26,
-                        scale: 0.97,
-                        filter: "blur(7px)",
-                    },
-                    {
-                        autoAlpha: 1,
-                        x: 0,
-                        y: 0,
-                        scale: 1,
-                        filter: "blur(0px)",
-                        duration: 0.8,
-                        ease: "power3.out",
-                        clearProps: "filter",
-                        scrollTrigger: {
-                            trigger: item,
-                            start: "top 88%",
-                            once: true,
+            ScrollTrigger.batch(".faq-item", {
+                start: "top 88%",
+                once: true,
+                interval: 0.14,
+                batchMax: 3,
+                onEnter: (items) => {
+                    gsap.fromTo(
+                        items,
+                        { autoAlpha: 0, y: 34, scale: 0.985, filter: "blur(4px)" },
+                        {
+                            autoAlpha: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                            duration: 0.75,
+                            stagger: 0.13,
+                            ease: "power3.out",
+                            clearProps: "filter,transform",
+                            overwrite: true,
                         },
-                    },
-                );
+                    );
+                },
             });
         }, section);
 
@@ -129,12 +121,7 @@ export default function FaqSection() {
     }, []);
 
     const toggleQuestion = (index) => {
-        setOpenQuestions((current) => {
-            const next = new Set(current);
-            if (next.has(index)) next.delete(index);
-            else next.add(index);
-            return next;
-        });
+        setOpenQuestion((current) => (current === index ? null : index));
     };
 
     return (
@@ -157,7 +144,7 @@ export default function FaqSection() {
 
                 <div className="faq-list mx-auto flex w-full max-w-[760px] flex-col gap-[22px] max-[600px]:gap-4">
                     {questions.map((item, index) => {
-                        const isOpen = openQuestions.has(index);
+                        const isOpen = openQuestion === index;
                         return (
                             <article className="faq-item" key={item.question}>
                                 {index === 3 && (
