@@ -403,7 +403,7 @@ export default function LifeAtLitSection() {
         <>
             <div
                 ref={containerRef}
-                className="relative w-full h-full bg-[#0b0c0c] [will-change:background-color] font-sans"
+                className="life-at-lit-section relative w-full h-full bg-[#0b0c0c] [will-change:background-color] font-sans"
             >
                 {/* MARQUEE */}
                 <section
