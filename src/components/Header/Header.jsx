@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Header.css";
 import LitLogo from "../../assets/images/lit20logo.avif";
+import DownIcon from "../../assets/icons/DownIcon";
 
 const links = ["Why LIT", "Placements", "Stories", "About"];
 const programs = [
@@ -88,7 +89,7 @@ export default function Header() {
                         ref={programsRef}
                     >
                         <button
-                            className={`nav-program flex h-[42px] items-center justify-center gap-3 rounded-full border px-[18px] text-[15px] uppercase font-bold tracking-[.02em] text-white transition-colors max-[900px]:h-[42px] cursor-pointer max-[900px]:w-full max-[900px]:justify-center ${programsOpen ? "border-white/20 bg-white/[.04]" : "border-white/10 bg-transparent hover:border-white/20 hover:bg-white/[.035]"}`}
+                            className={`nav-program flex h-[42px] items-center justify-center gap-2 rounded-full border px-[18px] text-[15px] uppercase font-bold tracking-[.02em] text-white transition-colors max-[900px]:h-[42px] cursor-pointer max-[900px]:w-full max-[900px]:justify-center ${programsOpen ? "border-white/20 bg-white/[.04]" : "border-white/10 bg-transparent hover:border-white/20 hover:bg-white/[.035]"}`}
                             type="button"
                             aria-expanded={programsOpen}
                             aria-controls="programs-dropdown"
@@ -105,7 +106,7 @@ export default function Header() {
                                 className={`ml-1 text-[16px] leading-none transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`}
                                 aria-hidden="true"
                             >
-                                ⌃
+                                <DownIcon/>
                             </span>
                         </button>
                         {programsOpen && (
