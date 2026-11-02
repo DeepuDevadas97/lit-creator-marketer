@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./Header.css";
 import LitLogo from "../../assets/images/lit20logo.avif";
 import DownIcon from "../../assets/icons/DownIcon";
+import FloatingContactLinks from "../FloatingContactLinks/FloatingContactLinks";
 
 const links = ["Why LIT", "Placements", "Stories", "About"];
 const programs = [
@@ -58,15 +59,18 @@ export default function Header() {
             >
                 <img src={LitLogo} alt="LIT" className="w-7 sm:w-10" />
             </a>
-            <button
-                className="menu-toggle hidden size-[42px] shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border border-white/20 bg-transparent max-[900px]:flex"
-                aria-label="Toggle navigation"
-                aria-expanded={menuOpen}
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                <span />
-                <span />
-            </button>
+            <div className="mobile-header-actions ml-auto hidden shrink-0 items-center gap-3.5 max-[900px]:flex">
+                <FloatingContactLinks placement="header" />
+                <button
+                    className="menu-toggle flex size-[42px] shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border border-white/20 bg-transparent"
+                    aria-label="Toggle navigation"
+                    aria-expanded={menuOpen}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span />
+                    <span />
+                </button>
+            </div>
             <nav
                 className={`header-nav flex-1 items-center justify-between gap-5 min-[901px]:flex ${menuOpen ? "is-open" : ""}`}
                 aria-label="Main navigation"

@@ -51,10 +51,18 @@ export default function HeroSection() {
             const number = loader.current.querySelector(".loader-count");
             const ring = loader.current.querySelector(".loader-ring-progress");
             const siteHeader = document.querySelector(".site-header");
+            const floatingContactLinks = document.querySelectorAll(
+                ".floating-contact-links",
+            );
+            const floatingContactItems = document.querySelectorAll(
+                ".floating-contact-link",
+            );
 
             if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 gsap.set(loader.current, { display: "none" });
                 gsap.set(landing.current, { marginTop: 0 });
+                if (floatingContactLinks.length)
+                    gsap.set(floatingContactLinks, { autoAlpha: 1, y: 0 });
                 return;
             }
 
@@ -70,6 +78,14 @@ export default function HeroSection() {
 
             if (siteHeader)
                 gsap.set(siteHeader, { autoAlpha: 0, y: -24, zIndex: 0 });
+            if (floatingContactLinks.length)
+                gsap.set(floatingContactLinks, { autoAlpha: 0, y: 20 });
+            if (floatingContactItems?.length)
+                gsap.set(floatingContactItems, {
+                    autoAlpha: 0,
+                    x: 28,
+                    scale: 0.82,
+                });
             gsap.set(
                 ".hero-copy > :not(h1), .applications-pill, .play-button, .visual-caption > *, .visual-index",
                 { autoAlpha: 0, y: 24 },
@@ -188,6 +204,25 @@ export default function HeroSection() {
                 .add(reveal, 1.4);
             if (siteHeader)
                 scrollAnimation.set(siteHeader, { zIndex: 1000 }, 2.15);
+            if (floatingContactLinks.length)
+                scrollAnimation.set(
+                    floatingContactLinks,
+                    { autoAlpha: 1, y: 0 },
+                    2.15,
+                );
+            if (floatingContactItems.length)
+                scrollAnimation.to(
+                    floatingContactItems,
+                    {
+                        autoAlpha: 1,
+                        x: 0,
+                        scale: 1,
+                        duration: 0.42,
+                        stagger: 0.1,
+                        ease: "back.out(1.6)",
+                    },
+                    2.15,
+                );
             reveal.paused(false);
 
             gsap.to(".visual-photo", {

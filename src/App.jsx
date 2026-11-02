@@ -16,12 +16,14 @@ import PlacementOutcomesSection from "./components/PlacementOutcomesSection/Plac
 import FaqSection from "./components/FaqSection/FaqSection";
 import NextChallengeSection from "./components/NextChallengeSection/NextChallengeSection";
 import Header from "./components/Header/Header";
+import FloatingContactLinks from "./components/FloatingContactLinks/FloatingContactLinks";
 
 export default function App() {
     return (
         <div className="site-page">
             <SmoothScroll />
             <Header />
+            <FloatingContactLinks />
             <main>
                 <HeroSection />
                 <AudienceSection />

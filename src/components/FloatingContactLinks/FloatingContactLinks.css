@@ -1,0 +1,112 @@
+.floating-contact-links {
+    position: fixed;
+    z-index: 900;
+    right: clamp(16px, 3vw, 46px);
+    bottom: clamp(24px, 8vh, 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.floating-contact-link {
+    display: grid;
+    width: clamp(52px, 3.6vw, 68px);
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.floating-contact-link:hover {
+    transform: translateY(-3px) scale(1.04);
+    filter: brightness(1.08);
+}
+
+.floating-contact-link:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.floating-contact-link svg {
+    width: 54%;
+    height: 54%;
+}
+
+.floating-contact-whatsapp {
+    background: #00bd7b;
+}
+
+.floating-contact-whatsapp svg,
+.floating-contact-call svg {
+    fill: currentColor;
+}
+
+.floating-contact-instagram {
+    background: linear-gradient(145deg, #ffb13d 0%, #ff3b50 48%, #c51d88 100%);
+}
+
+.floating-contact-instagram svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.floating-contact-instagram .instagram-flash {
+    fill: currentColor;
+    stroke: none;
+}
+
+.floating-contact-call {
+    background: #1686f5;
+}
+
+.floating-contact-links {
+    visibility: hidden;
+}
+
+@media (max-width: 700px) {
+    .floating-contact-links {
+        right: 14px;
+        bottom: max(20px, env(safe-area-inset-bottom));
+        gap: 10px;
+    }
+
+    .floating-contact-link {
+        width: 50px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-contact-link {
+        transition: none;
+    }
+}
+
+.floating-contact-links-header {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .floating-contact-links:not(.floating-contact-links-header) {
+        display: none;
+    }
+
+    .floating-contact-links-header {
+        position: static;
+        right: auto;
+        bottom: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        visibility: hidden;
+    }
+
+    .floating-contact-links-header .floating-contact-link {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+    }
+}
