@@ -187,7 +187,7 @@ export default function FaqSection() {
                                                 {item.answer}
                                             </p>
                                             <span
-                                                className="mb-1 grid h-11 w-11 flex-none place-items-center rounded-full border border-fuchsia-400 text-[25px] font-bold leading-none text-fuchsia-400 max-[600px]:h-9 max-[600px]:w-9"
+                                                className="mb-1 grid h-11 w-11 flex-none place-items-center rounded-full border border-fuchsia-400 text-[25px] font-bold leading-none text-fuchsia-400 max-[600px]:h-9 max-[600px]:w-9 max-sm:hidden"
                                                 aria-hidden="true"
                                             >
                                                 ↗
