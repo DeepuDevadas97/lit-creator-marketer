@@ -324,7 +324,7 @@ export default function ChallengesSection() {
             <div className="relative z-[1] mx-auto w-full max-w-[var(--site-container-width)]">
                 <h2 className="challenges-heading mb-12 text-center text-[clamp(34px,4vw,70px)] font-semibold leading-none tracking-[-.065em] max-[700px]:mb-8">
                     Experience learning through{" "}
-                    <span className="challenge-serif font-normal italic">
+                    <span className="playfair-display font-normal italic">
                         Challenges
                     </span>
                 </h2>
@@ -364,7 +364,7 @@ export default function ChallengesSection() {
                             />
                             <span className="epic-tag">{active.tag}</span>
                             <div className="epic-art-copy epic-dynamic-content">
-                                <h3>{active.name}</h3>
+                                <h3 className="playfair-display">{active.name}</h3>
                                 <p>{active.tagline}</p>
                             </div>
                         </div>

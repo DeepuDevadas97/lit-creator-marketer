@@ -420,7 +420,7 @@ export default function LifeAtLitSection() {
                     className="life-marquee relative w-full h-[50svh] overflow-hidden max-[1199px]:h-auto max-[1199px]:overflow-hidden"
                 >
                     <h2 className="life-stories-heading">
-                        <em>Life at</em> LIT
+                        <em className="playfair-display">Life at</em> LIT
                     </h2>
                     <div className="life-marquee-frame absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-5deg] w-[150%] h-full max-[1000px]:w-[300%]">
                         <div

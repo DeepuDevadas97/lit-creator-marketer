@@ -161,13 +161,13 @@ export default function CreativityAISection() {
                             className="m-0 text-[clamp(34px,3.5vw,62px)] font-semibold leading-[1.05] tracking-[-.06em]"
                             id="creativity-ai-title"
                         >
-                            <span className="creativity-serif font-normal italic">
+                            <span className="playfair-display font-normal italic">
                                 Creativity
                             </span>{" "}
                             is human.
                             <br />
                             Speed is{" "}
-                            <span className="creativity-serif font-normal italic">
+                            <span className="playfair-display font-normal italic">
                                 AI.
                             </span>
                         </h2>

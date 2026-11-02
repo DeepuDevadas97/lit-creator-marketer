@@ -158,7 +158,7 @@ export default function Testimonials2() {
         <section className="mentor-section" aria-labelledby="mentor-title">
             <div className="mentor-heading">
                 <h2 id="mentor-title">
-                    Learn from the <em>Industry</em>
+                    Learn from the <em className="playfair-display">Industry</em>
                 </h2>
                 <p>
                     LIT isn't run by academics, it's driven by the creators,

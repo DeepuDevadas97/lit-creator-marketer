@@ -5,9 +5,6 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
     background-size: 32px 32px;
 }
-.creativity-serif {
-    font-family: Georgia, "Times New Roman", serif;
-}
 .ai-practice-panel {
     position: relative;
     margin-top: auto;

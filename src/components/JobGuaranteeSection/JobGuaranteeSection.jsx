@@ -167,7 +167,7 @@ export default function JobGuaranteeSection() {
                             The min. ₹7
                             <br />
                             LPA
-                            <span className="guarantee-serif block pt-3 text-[clamp(42px,4.4vw,78px)] font-normal leading-[.95] tracking-[-.07em]">
+                            <span className="guarantee-serif playfair-display block pt-3 text-[clamp(42px,4.4vw,78px)] font-normal leading-[.95] tracking-[-.07em]">
                                 Job Guarantee
                             </span>
                         </h2>
@@ -187,7 +187,7 @@ export default function JobGuaranteeSection() {
                     <div className="px-4 pt-8">
                         <h3 className="m-0 text-[clamp(25px,2vw,36px)] font-medium tracking-[-.06em]">
                             The LIT{" "}
-                            <span className="guarantee-serif font-normal italic">
+                            <span className="guarantee-serif playfair-display font-normal italic">
                                 Portfolio
                             </span>{" "}
                             Engine

@@ -100,7 +100,7 @@ export default function RolesSection() {
   return (
     <section className="roles-section" ref={sectionRef} aria-labelledby="roles-title">
       <div className="roles-container">
-        <h2 id="roles-title">Roles You’ll <em>Conquer</em></h2>
+        <h2 id="roles-title">Roles You’ll <em className="playfair-display">Conquer</em></h2>
         <div className="roles-grid">
           {roles.map((role) => (
             <article className="role-card" key={role.title} style={{ '--role-color': role.color }}>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "lenis/dist/lenis.css";
 @import "tailwindcss";
 :root {
@@ -12,6 +12,47 @@
     font-optical-sizing: auto;
     font-weight: 400;
 }
+
+@font-face {
+    font-family: "Open Sauce One";
+    src: url("./assets/fonts/open-sauce.one-light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sauce One";
+    src: url("./assets/fonts/open-sauce.one-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sauce One";
+    src: url("./assets/fonts/open-sauce.one-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sauce One";
+    src: url("./assets/fonts/open-sauce.one-semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sauce One";
+    src: url("./assets/fonts/open-sauce.one-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -19,6 +60,12 @@ body {
     margin: 0;
     min-width: 0;
     min-height: 100vh;
+    font-family: "Open Sauce One", sans-serif;
+}
+.playfair-display {
+    font-family: "Playfair Display", serif !important;
+    font-optical-sizing: auto;
+    font-style: italic;
 }
 a {
     color: inherit;

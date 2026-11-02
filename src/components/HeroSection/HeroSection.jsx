@@ -237,7 +237,7 @@ export default function HeroSection() {
                             <h1>
                                 <span className="title-line-wrap">
                                     <span className="title-line">
-                                        <span className="serif-word">
+                                        <span className="serif-word playfair-display">
                                             Creator
                                         </span>{" "}
                                         Marketer
