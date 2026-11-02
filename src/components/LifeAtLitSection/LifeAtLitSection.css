@@ -140,10 +140,14 @@
         justify-content: flex-start !important;
         align-items: stretch !important;
         gap: 14px !important;
-        overflow-x: auto;
+        overflow-x: auto !important;
+        overflow-y: hidden;
         padding: 8px 0 14px;
         scrollbar-width: none;
         touch-action: pan-x;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
     }
     .life-marquee-images::-webkit-scrollbar {
         display: none;
@@ -154,6 +158,8 @@
         flex: 0 0 min(42vw, 380px) !important;
         aspect-ratio: 3 / 2;
         border-radius: 18px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
     .life-stories-stage {
         height: auto;
