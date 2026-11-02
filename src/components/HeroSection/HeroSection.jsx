@@ -58,6 +58,16 @@ export default function HeroSection() {
                 return;
             }
 
+            const getCircleClip = (cover) => {
+                const { width, height } = loader.current.getBoundingClientRect();
+                const centerX = width / 2;
+                const centerY = height / 2;
+                const radius = cover
+                    ? Math.ceil(Math.hypot(centerX, centerY))
+                    : 0;
+                return `circle(${radius}px at ${centerX}px ${centerY}px)`;
+            };
+
             if (siteHeader)
                 gsap.set(siteHeader, { autoAlpha: 0, y: -24, zIndex: 0 });
             gsap.set(
@@ -160,10 +170,11 @@ export default function HeroSection() {
                     { autoAlpha: 0, duration: 0.35 },
                     1,
                 )
-                .to(
+                .fromTo(
                     loader.current,
+                    { clipPath: () => getCircleClip(true) },
                     {
-                        clipPath: "circle(0% at 50% 50%)",
+                        clipPath: () => getCircleClip(false),
                         duration: 0.8,
                         ease: "none",
                     },

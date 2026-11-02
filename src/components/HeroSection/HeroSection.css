@@ -675,6 +675,9 @@
 }
 /* Keep the banner beneath the pinned intro until the circular wipe finishes. */
 .scroll-loader {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     z-index: 2;
     clip-path: circle(150% at 50% 50%);
     will-change: clip-path, background-color;
